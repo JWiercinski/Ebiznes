@@ -6,6 +6,6 @@
 
 :white_check_mark: 4.0 - Gradle i JDBC SQLite - [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/8289ae5606baf8c2027d0bc704bed839a3138f11)
 
-:white_check_mark: 4.5 - HelloWorld w Javie
+:white_check_mark: 4.5 - HelloWorld w Javie/Gradle w CMD - [LIND DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/68111e3fba6c908ee316e23175a0c4bdf209780a)
 
-:x: 5.0 - docker-compose
+:white_check_mark: 5.0 - docker-compose

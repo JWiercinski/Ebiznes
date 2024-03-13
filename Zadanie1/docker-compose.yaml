@@ -1,0 +1,6 @@
+services:
+  systemcontainer:
+    image: "jackson/task1"
+    tty: true
+    working_dir: /home/jackson
+    command: tail -F /dev/null
