@@ -4,8 +4,8 @@
 
 :white_check_mark: 3.5 - Ubuntu 22.04, Java8 i Kotlin - [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/32be2ebff9b166f70d6e6676620790484947ebf9)
 
-:x: 4.0 - Gradle i JDBC SQLite
+:white_check_mark: 4.0 - Gradle i JDBC SQLite - [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/8289ae5606baf8c2027d0bc704bed839a3138f11)
 
-:x: 4.5 - HelloWorld w Javie
+:white_check_mark: 4.5 - HelloWorld w Javie
 
 :x: 5.0 - docker-compose
