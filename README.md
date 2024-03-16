@@ -6,6 +6,8 @@
 
 :white_check_mark: 4.0 - Gradle i JDBC SQLite - [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/8289ae5606baf8c2027d0bc704bed839a3138f11)
 
-:white_check_mark: 4.5 - HelloWorld w Javie/Gradle w CMD - [LIND DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/68111e3fba6c908ee316e23175a0c4bdf209780a)
+:white_check_mark: 4.5 - HelloWorld w Javie/Gradle w CMD - [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/68111e3fba6c908ee316e23175a0c4bdf209780a)
 
-:white_check_mark: 5.0 - docker-compose
+:white_check_mark: 5.0 - docker-compose - [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/156180c9950a9661e00ee47d17b1b3b8d0e0f7c1)
+
+Kod: Zadanie1, [LINK DO OBRAZU DOCKERA](https://hub.docker.com/repository/docker/jwiercinski/task1/general)
