@@ -1,0 +1,8 @@
+@(product: Option[Products])
+@product.map { p =>
+    <div>
+        <h1>@p.pname</h1>
+        <p>Price: @p.pprice</p>
+        <p>Manufacturer: @p.pman</p>
+    </div>
+}

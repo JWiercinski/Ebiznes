@@ -1,0 +1,7 @@
+@(truelist: scala.collection.mutable.ListBuffer[Products])
+<h1>Produkty</h1>
+<h2>Nazwa - Cena - Producent</h2>
+<p></p>
+@for(product <- truelist) {
+    <p>@product.pname - @product.pprice - @product.pman</p>
+}

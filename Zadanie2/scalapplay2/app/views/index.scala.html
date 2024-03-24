@@ -1,0 +1,36 @@
+@()
+
+@main("ListRemaðe") {
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <h1>Witamy w modyfikatorze list!</h1>
+  <h2>Produkty</h2>
+  <p>Odbierz listę produktów</p>
+  <form action="@routes.HomeController.pgetall" method="get">
+    <button type="submit" onclick="pgetall()">Odbierz całą listę</button>
+  </form>
+  <p>Odbierz jeden element</p>
+  <form action="@routes.HomeController.pgetone" method="get">
+    <input type="text" name="pid" placeholder="ID elementu do otrzymania">
+    <button type="submit">Odbierz element</button>
+  </form>
+  <p>Usuń element</p>
+  <form action="@routes.HomeController.premoval" method="delete">
+    <input type="text" name="prid" placeholder="ID elementu do usunięcia">
+    <button type="submit">Usuń element</button>
+  </form>
+  <p>Dodaj element</p>
+  <form action="@routes.HomeController.pcreate" method="get">
+    <input type="text" name="pname" placeholder="Nazwa produktu">
+    <input type="text" name="pprice" placeholder="Cena produktu">
+    <input type="text" name="pman" placeholder="Producent">
+    <button type="submit">Dodaj element</button>
+  </form>
+  <p>Modyfikuj element</p>
+  <form action="@routes.HomeController.pmodify" method="get">
+    <input type="text" name="pname" placeholder="Nazwa produktu">
+    <input type="text" name="pprice" placeholder="Cena produktu">
+    <input type="text" name="pman" placeholder="Producent">
+    <input type="text" name="pmid" placeholder="Indeks produktu">
+    <button type="submit">Zmodyfikuj element</button>
+  </form>
+}

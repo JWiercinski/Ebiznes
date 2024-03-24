@@ -11,3 +11,17 @@
 :white_check_mark: 5.0 - docker-compose - [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/156180c9950a9661e00ee47d17b1b3b8d0e0f7c1)
 
 Kod: Zadanie1, [LINK DO OBRAZU DOCKERA](https://hub.docker.com/repository/docker/jwiercinski/task1/general)
+
+**Zadanie 2** - Scala
+
+:white_check_mark: 3.0 - kontroler do produktów
+
+:x: 3.5 - CRUD endpoints do produktów
+
+:x: 4.0 - kontrolery i endpointy CRUD do kategorii oraz koszyka
+
+:x: 4.5 - uruchomienie aplikacji na dockerze
+
+:x: 5.0 - CORS dla dwóch hostów
+
+Kod: Zadanie 2
