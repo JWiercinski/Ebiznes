@@ -14,9 +14,9 @@ Kod: Zadanie1, [LINK DO OBRAZU DOCKERA](https://hub.docker.com/repository/docker
 
 **Zadanie 2** - Scala
 
-:white_check_mark: 3.0 - kontroler do produktów
+:white_check_mark: 3.0 - kontroler do produktów - [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/a64c325042e1e88f090eeca409caa41259ffd592)
 
-:x: 3.5 - CRUD endpoints do produktów
+:white_check_mark: 3.5 - CRUD endpoints do produktów
 
 :x: 4.0 - kontrolery i endpointy CRUD do kategorii oraz koszyka
 
