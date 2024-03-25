@@ -12,11 +12,11 @@
 
 Kod: Zadanie1, [LINK DO OBRAZU DOCKERA](https://hub.docker.com/repository/docker/jwiercinski/task1/general)
 
-**Zadanie 2** - Scala
+**Zadanie 2** - Scala & Play2
 
 :white_check_mark: 3.0 - kontroler do produktów - [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/a64c325042e1e88f090eeca409caa41259ffd592)
 
-:white_check_mark: 3.5 - CRUD endpoints do produktów
+:white_check_mark: 3.5 - CRUD endpoints do produktów - [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/754c55fddcdf8a054acc0b65ca30d89cae1ec653)
 
 :x: 4.0 - kontrolery i endpointy CRUD do kategorii oraz koszyka
 
