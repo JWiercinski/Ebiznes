@@ -1,14 +1,17 @@
 package controllers
+
 import models.Products
 import javax.inject._
 import play.api._
 import play.api.mvc._
 import scala.collection.mutable.ListBuffer
 import scala.util.Try
+import models.Category
+import models.Basket
 
 /**
  * This controller creates an `Action` to handle HTTP requests to the
- * application's home page.
+ * application's home page (and a bit more, though nowhere near as clean as the template)
  * Component configuration - SBT 1.9.2, Scala 2.12.12, IBM JDK 1.8.0_402
  */
 @Singleton
@@ -74,6 +77,7 @@ class HomeController @Inject()(val controllerComponents: ControllerComponents) e
     if (ok == true) {
       val nice=index.get
       val total= pidlist.indexOf(nice)
+      removeitemfromelsewhere(total)
       prodlist.remove(total)
       pidlist-=nice
       Ok(s"Element $nice usunięty")
@@ -145,6 +149,7 @@ class HomeController @Inject()(val controllerComponents: ControllerComponents) e
       if (ok == true) {
         var xp = pidlist.indexOf(pid2)
         val product = prodlist.lift(xp)
+        removeitemfromelsewhere(xp)
         prodlist.remove(xp)
         pidlist-=xp
         NoContent
@@ -189,4 +194,263 @@ class HomeController @Inject()(val controllerComponents: ControllerComponents) e
         NotFound
       }
   }
+  def removeitemfromelsewhere(index: Int): Unit = {
+    val item=prodlist(index)
+    for (rep <- 0 to categorieslist.size-1)
+      {
+        var currentC=categorieslist(rep)
+        if (currentC.products.contains(item)==true)
+          {
+            var remid=currentC.products.indexOf(item)
+            currentC.products.remove(remid)
+          }
+      }
+    for (trial <- 0 to bucketlist.size-1)
+      {
+        var currentB=bucketlist(trial)
+        if (currentB.products.contains(item)==true)
+        {
+          var remid=currentB.products.indexOf(item)
+          currentB.products.remove(remid)
+        }
+      }
+  }
+  val categorieslist=new ListBuffer[Category]()
+  val bucketlist=new ListBuffer[Basket]()
+  categorieslist += new Category(name="Inne", products=new ListBuffer[Products](), index=0)
+  bucketlist+=new Basket(user="TheOneAndOnly", products=new ListBuffer[Products](), index=0)
+  categorieslist(0).products+=prodlist(0)
+  bucketlist(0).products+=prodlist(0)
+  val cidlist = new ListBuffer[Int]()
+  cidlist += 0
+  val bidlist = new ListBuffer[Int]()
+  bidlist += 0
+  def cgetall() = Action { implicit request =>
+    Ok(views.html.cgetall(categorieslist))
+  }
+  def bgetall() = Action { implicit request =>
+    Ok(views.html.bgetall(bucketlist))
+  }
+  def cidlookup(idcheck: Int): Boolean = {
+    var ok=false
+    if (cidlist.contains(idcheck)==true && idcheck>=0)
+      ok=true
+    return ok
+  }
+  def bidlookup(idcheck: Int): Boolean = {
+    var ok=false
+    if (bidlist.contains(idcheck)==true && idcheck>=0)
+      ok=true
+    return ok
+  }
+  def cgetone(cid: String) = Action {
+    if (cid.forall(Character.isDigit)) {
+      val pid2 = cid.toInt
+      val ok = cidlookup(pid2)
+      if (ok == true) {
+        var id=cidlist.indexOf(pid2)
+        val category= categorieslist.lift(id)
+        Ok(views.html.cgetone(category))
+      }
+      else
+        BadGateway(s"Nie udało się oðebrać kategorii o podanym indeksie")
+    }
+    else
+      BadGateway(s"Nie udało się oðebrać kategorii o podanym indeksie")
+  }
+  def bgetone(pid: String) = Action {
+    if (pid.forall(Character.isDigit)) {
+      val pid2 = pid.toInt
+      val ok = bidlookup(pid2)
+      if (ok == true) {
+        var id=bidlist.indexOf(pid2)
+        val basket= bucketlist.lift(id)
+        Ok(views.html.bgetone(basket))
+      }
+      else
+        BadGateway(s"Nie udało się oðebrać koszyka o podanym indeksie")
+    }
+    else
+      BadGateway(s"Nie udało się oðebrać koszyka o podanym indeksie")
+  }
+  def ccreate() = Action { implicit request =>
+    val pro = request.body.asFormUrlEncoded
+    val name = pro.get("cname").lift(0).get.toString
+    var cool=true
+    if (name.isEmpty==false) {
+      var index=0
+      if (cidlist.isEmpty==false)
+      {
+        index=cidlist.max + 1
+      }
+      for (i <- 0 to categorieslist.size-1)
+      {
+        if (categorieslist(i).name==name)
+        {
+          cool=false
+        }
+      }
+      if (cool==true) {
+        var newitem = new Category(index = index, name = name, products = new ListBuffer[Products]())
+        categorieslist += newitem
+        cidlist += index
+        Created("Dodano element do listy")
+      }
+      else
+        BadRequest("Istnieje już kategoria o tej nazwie")
+    }
+    else
+      BadRequest(s"Elementu nie udało się dodać do listy... $name")
+  }
+  def bcreate() = Action { implicit request =>
+    val pro = request.body.asFormUrlEncoded
+    val name = pro.get("bname").lift(0).get.toString
+    if (name.isEmpty==false) {
+      var index=0
+      if (bidlist.isEmpty==false)
+      {
+        index=bidlist.max + 1
+      }
+      var cool=true
+      for (i <- 0 to bucketlist.size-1)
+      {
+        if (bucketlist(i).user==name)
+        {
+          cool=false
+        }
+      }
+      if (cool==true) {
+        var newitem = new Basket(index = index, user = name, products = new ListBuffer[Products]())
+        bucketlist += newitem
+        bidlist += index
+        Created("Dodano element do listy")
+      }
+      else
+        BadRequest("Istnieje już użytkownik o takiej nazwie")
+    }
+    else
+      BadRequest(s"Elementu nie udało się dodać do listy... $name")
+  }
+  def cmod()= Action { implicit request =>
+    val pro = request.body.asFormUrlEncoded
+    val name = pro.get("cname").lift(0).get.toString
+    val prodID = pro.get("prodid").lift(0).get.toString
+    val option = pro.get("opt").lift(0).get.toString
+    // option values - r to remove product from category, a to add
+    val index2 = pro.get("cmid").lift(0).get.toString
+    var ok=false
+    if (index2.isEmpty==false && index2.forall(Character.isDigit)==true) {
+      val index = index2.toInt
+      ok = cidlookup(index)
+    }
+    if (ok==true) {
+      val index=index2.toInt
+      var newindex = cidlist.indexOf(index)
+      if (name.isEmpty==false) {
+        categorieslist(newindex).name = name
+      }
+      if (prodID.isEmpty==false && option.isEmpty==false) {
+        if (prodID.forall(Character.isDigit)==true)
+          {
+            val productID=prodID.toInt
+            if (pidlookup(productID)==true)
+              {
+                var pid=pidlist.indexOf(productID)
+                option match {
+                  case "r" =>{
+                    if (categorieslist(newindex).products.contains(prodlist(pid))==true){
+                  categorieslist(newindex).products.remove(pid)
+                  }}
+                  case "a" =>{
+                    if (categorieslist(newindex).products.contains(prodlist(pid))==false)
+                      {
+                  categorieslist(newindex).products+=prodlist(pid)
+                  }}
+                }
+            }
+          }
+        }
+      val category = categorieslist.lift(newindex)
+      Ok(views.html.cgetone(category))
+    }
+    else
+    {
+      NotFound
+    }
+  }
+  def crem(cid: String)= Action {
+    if (cid.forall(Character.isDigit)) {
+      val cid2 = cid.toInt
+      val ok = cidlookup(cid2)
+      if (ok == true) {
+        var xp = cidlist.indexOf(cid2)
+        categorieslist.remove(xp)
+        cidlist-=xp
+        NoContent
+      }
+      else
+        NotFound(s"Nie udało się usunąć kategorii o podanym indeksie")
+    }
+    else
+      NotFound(s"Nie udało się usunąć kategorii o podanym indeksie")
+  }
+  def brem(bid: String)= Action {
+    if (bid.forall(Character.isDigit)) {
+      val bid2 = bid.toInt
+      val ok = bidlookup(bid2)
+      if (ok == true) {
+        var xp = bidlist.indexOf(bid2)
+        bucketlist.remove(xp)
+        bidlist-=xp
+        NoContent
+      }
+      else
+        NotFound(s"Nie udało się usunąć koszyka o podanym indeksie")
+    }
+    else
+      NotFound(s"Nie udało się usunąć koszyka o podanym indeksie")
+  }
+  def bmod()= Action { implicit request =>
+    val pro = request.body.asFormUrlEncoded
+    val name = pro.get("user").lift(0).get.toString
+    val prodID = pro.get("prodid").lift(0).get.toString
+    val option = pro.get("opt").lift(0).get.toString
+    // option values - r to remove product from category, a to add
+    val index2 = pro.get("bmid").lift(0).get.toString
+    var ok = false
+    if (index2.isEmpty == false && index2.forall(Character.isDigit) == true) {
+      val index = index2.toInt
+      ok = bidlookup(index)
+    }
+    if (ok == true) {
+      val index = index2.toInt
+      var newindex = bidlist.indexOf(index)
+      if (name.isEmpty == false) {
+        bucketlist(newindex).user = name
+      }
+      if (prodID.isEmpty == false && option.isEmpty == false) {
+        if (prodID.forall(Character.isDigit) == true) {
+          val productID = prodID.toInt
+          if (pidlookup(productID) == true) {
+            var pid = pidlist.indexOf(productID)
+            option match {
+              case "r" => {
+                if (bucketlist(newindex).products.contains(prodlist(pid)) == true) {
+                  bucketlist(newindex).products.remove(pid)
+                }
+              }
+              case "a" => {
+                bucketlist(newindex).products += prodlist(pid)
+              }
+            }
+          }
+        }
+      }
+        val basket = bucketlist.lift(newindex)
+        Ok(views.html.bgetone(basket))
+      }
+      else {
+        NotFound
+      }
+    }
 }

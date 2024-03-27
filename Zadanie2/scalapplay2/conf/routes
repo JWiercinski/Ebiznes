@@ -13,6 +13,17 @@ GET     /pgetone/:pid                 controllers.HomeController.pgetone(pid: St
 POST    /pcrea                  controllers.HomeController.pcreate
 DELETE  /prem/:pid                   controllers.HomeController.prem(pid: String)
 PUT     /pmod                   controllers.HomeController.pmod
-#Just for the forms
+#TASK3
+GET     /pca                    controllers.HomeController.cgetall
+GET     /pba                    controllers.HomeController.bgetall
+GET     /cgetone/:cid           controllers.HomeController.cgetone(cid: String)
+GET     /bgetone/:bid           controllers.HomeController.bgetone(bid: String)
+POST    /ccrea                  controllers.HomeController.ccreate
+POST    /bcrea                  controllers.HomeController.bcreate
+PUT     /cmod                   controllers.HomeController.cmod
+DELETE  /crem/:cid                   controllers.HomeController.crem(cid: String)
+DELETE  /brem/:bid                   controllers.HomeController.brem(bid: String)
+PUT     /bmod                   controllers.HomeController.bmod
+#NOT FOR GRADING, HELPER FUNCTIONS FOR LOGIC TESTING
 GET     /pmid                   controllers.HomeController.pmodify
-GET     /pdid                controllers.HomeController.premoval
+GET     /pdid                   controllers.HomeController.premoval

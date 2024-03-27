@@ -39,4 +39,46 @@
     <input type="text" name="pmid" placeholder="Indeks produktu">
     <button type="submit">Zmodyfikuj element</button>
   </form>
+  <h2>Kategorie</h2>
+  <p>Odbierz listę kategorii i przynależnych produktów</p>
+  <form action="/pca" method="get">
+    <button type="submit" onclick="cgetall()">Odbierz całą listę</button>
+  </form>
+  <p>Odbierz jeden element</p>
+  <form id="getFormEins" method="get">
+    <input type="number" id="cid" name="cid" placeholder="ID elementu do otrzymania">
+    <button type="submit">Odbierz element</button>
+  </form>
+  <script>
+          document.getElementById('getFormEins').onsubmit = function() {
+            var cid = document.getElementById('cid').value;
+            this.action = "/cgetone/" + cid;
+          };
+  </script>
+  <p>Dodaj element</p>
+  <form action="/ccrea" method="post">
+    <input type="text" name="cname" placeholder="Nazwa kategorii">
+    <button type="submit">Dodaj element</button>
+  </form>
+  <h2>Koszyki</h2>
+  <p>Odbierz listę koszyków i przynależnych produktów</p>
+  <form action="/pba" method="get">
+    <button type="submit" onclick="bgetall()">Odbierz całą listę</button>
+  </form>
+  <p>Odbierz jeden element</p>
+  <form id="getFormZwei" method="get">
+    <input type="number" id="bid" name="bid" placeholder="ID elementu do otrzymania">
+    <button type="submit">Odbierz element</button>
+  </form>
+  <script>
+          document.getElementById('getFormZwei').onsubmit = function() {
+            var bid = document.getElementById('bid').value;
+            this.action = "/bgetone/" + bid;
+          };
+  </script>
+  <p>Dodaj element</p>
+  <form action="/bcrea" method="post">
+    <input type="text" name="bname" placeholder="Nazwa użytkownika">
+    <button type="submit">Dodaj element</button>
+  </form>
 }

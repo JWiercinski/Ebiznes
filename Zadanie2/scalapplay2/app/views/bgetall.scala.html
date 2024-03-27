@@ -1,0 +1,10 @@
+@(truelist: scala.collection.mutable.ListBuffer[Basket])
+<h1>Koszyki</h1>
+<h2>Nazwa Użytkownika - Index - Lista Produktów</h2>
+<p></p>
+@for(category <- truelist) {
+    <h3>@category.user - @category.index</h3>
+    @for(product <- category.products){
+        <p>@product.pname - @product.pprice - @product.pman - @product.pid</p>
+    }
+}

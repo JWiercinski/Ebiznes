@@ -18,7 +18,7 @@ Kod: Zadanie1, [LINK DO OBRAZU DOCKERA](https://hub.docker.com/repository/docker
 
 :white_check_mark: 3.5 - CRUD endpoints do produktów - [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/754c55fddcdf8a054acc0b65ca30d89cae1ec653)
 
-:x: 4.0 - kontrolery i endpointy CRUD do kategorii oraz koszyka
+:white_check_mark: 4.0 - kontrolery i endpointy CRUD do kategorii oraz koszyka
 
 :x: 4.5 - uruchomienie aplikacji na dockerze
 

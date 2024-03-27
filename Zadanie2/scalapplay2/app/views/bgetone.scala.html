@@ -1,0 +1,11 @@
+@(category: Option[Basket])
+@category.map { c =>
+    <div>
+        <h1>@c.user</h1>
+        <h2>Index: @c.index</h2>
+        <h3>Produkty w koszyku:</h3>
+        @for(product <- c.products) {
+            <p>@product.pname - @product.pprice - @product.pman - @product.pid</p>
+        }
+    </div>
+}
