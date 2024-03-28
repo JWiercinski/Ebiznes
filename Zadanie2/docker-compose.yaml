@@ -1,0 +1,11 @@
+services:
+  scalapp:
+    image: jackson/task2s
+    command: sbt run
+    ports:
+    - 9000:9000
+  ngrokapp:
+    image: jackson/task2n
+    environment:
+    - NGROK_PORT=app:9000
+    command: ./ngrok http 9000
