@@ -22,6 +22,6 @@ Kod: Zadanie1, [LINK DO OBRAZU DOCKERA](https://hub.docker.com/repository/docker
 
 :white_check_mark: 4.5 - uruchomienie aplikacji na dockerze z ngrok
 
-:x: 5.0 - CORS dla dwóch hostów
+:white_check_mark: 5.0 - CORS dla dwóch hostów
 
 Kod: Zadanie 2

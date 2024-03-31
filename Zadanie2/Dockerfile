@@ -1,4 +1,4 @@
-FROM ubuntu:22.04 AS mainbuild
+FROM ubuntu:22.04
 ARG DEBIAN_FRONTEND=noninteractive
 ENV TZ="Europe/Warsaw"
 RUN apt-get update
@@ -15,14 +15,10 @@ RUN apt-get update
 RUN apt-get install -y sbt=1.9.2
 RUN apt-get install -y wget
 EXPOSE 9000
-FROM mainbuild AS scalaapp
 RUN wget www.scala-lang.org/files/archive/scala-2.12.12.deb
 RUN dpkg -i scala-2.12.12.deb
+CMD sbt run
 ENV SCALA_HOME /usr/share/scala
 WORKDIR /scalaproject
 COPY scalapplay2 /scalapplay2
 WORKDIR /scalapplay2
-FROM mainbuild AS ngrokapp
-RUN wget -q -c -nc https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
-RUN apt-get install unzip
-RUN unzip -qq -n ngrok-stable-linux-amd64.zip

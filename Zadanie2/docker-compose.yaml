@@ -1,3 +1,4 @@
+version: "3.7"
 services:
   scalapp:
     image: jackson/task2s
@@ -5,7 +6,9 @@ services:
     ports:
     - 9000:9000
   ngrokapp:
-    image: jackson/task2n
-    environment:
-    - NGROK_PORT=app:9000
-    command: ./ngrok http 9000
+    image: wernight/ngrok
+    volumes:
+    - ./ngrok.yml:/home/ngrok/.ngrok2/ngrok.yml
+    ports:
+    - 4040:4040
+    command: ["ngrok", "http", "scalapp:9000", "--domain=muskrat-cute-multiply.ngrok-free.app"]
