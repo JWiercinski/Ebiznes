@@ -20,8 +20,8 @@ Kod: Zadanie1, [LINK DO OBRAZU DOCKERA](https://hub.docker.com/repository/docker
 
 :white_check_mark: 4.0 - kontrolery i endpointy CRUD do kategorii oraz koszyka - [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/6345736e0cbea1593f6bec08d15088182bdacae5)
 
-:white_check_mark: 4.5 - uruchomienie aplikacji na dockerze z ngrok
+:white_check_mark: 4.5 - uruchomienie aplikacji na dockerze z ngrok - [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/693a069bee7057ddacec3c4178c7187ace4323d2)
 
-:white_check_mark: 5.0 - CORS dla dwóch hostów
+:white_check_mark: 5.0 - CORS dla dwóch hostów - [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/693a069bee7057ddacec3c4178c7187ace4323d2)
 
-Kod: Zadanie 2
+Kod: Zadanie 2, [LINK DO OBRAZU DOCKERA](https://hub.docker.com/repository/docker/jwiercinski/task2/general)
