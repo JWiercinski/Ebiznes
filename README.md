@@ -24,4 +24,18 @@ Kod: Zadanie1, [LINK DO OBRAZU DOCKERA](https://hub.docker.com/repository/docker
 
 :white_check_mark: 5.0 - CORS dla dwóch hostów - [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/693a069bee7057ddacec3c4178c7187ace4323d2)
 
-Kod: Zadanie 2, [LINK DO OBRAZU DOCKERA](https://hub.docker.com/repository/docker/jwiercinski/task2/general)
+Kod: Zadanie2, [LINK DO OBRAZU DOCKERA](https://hub.docker.com/repository/docker/jwiercinski/task2/general)
+
+**Zadanie 3** - Kotlin & Ktor
+
+:white_check_mark: 3.0 - wysłanie wiadomości na Discord
+
+:x: 3.5 - odbiór wiadomości z platformy
+
+:x: 4.0 - zwrócenie listy kategorii na żądanie
+
+:x: 4.5 - zwrócenie listy produktów według kategorii
+
+:x: 5.0 - obsługa dodatkowej platformy
+
+Kod: Zadanie3
