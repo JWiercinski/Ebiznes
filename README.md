@@ -28,7 +28,7 @@ Kod: Zadanie2, [LINK DO OBRAZU DOCKERA](https://hub.docker.com/repository/docker
 
 **Zadanie 3** - Kotlin & Ktor
 
-:white_check_mark: 3.0 - wysłanie wiadomości na Discord
+:white_check_mark: 3.0 - wysłanie wiadomości na Discord - [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/07834624069a21a01ef203838627e0842afa0be1)
 
 :x: 3.5 - odbiór wiadomości z platformy
 
@@ -39,3 +39,16 @@ Kod: Zadanie2, [LINK DO OBRAZU DOCKERA](https://hub.docker.com/repository/docker
 :x: 5.0 - obsługa dodatkowej platformy
 
 Kod: Zadanie3
+
+**Zadanie 4** - Go & Echo
+
+:white_check_mark: 3.0 - kontroler produktów zgodny z CRUD
+
+:white_check_mark: 3.5 - model produktów z wykorzystaniem gorm
+
+:x: 4.0 - model koszyka z endpointem
+
+:x: 4.5 - model kategorii z relacją między kategorią i produktem
+
+:x: 5.0 - zapytania pogrupowane w gormowe scope'y
+ 
