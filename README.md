@@ -48,7 +48,7 @@ Kod: Zadanie3
 
 :white_check_mark: 4.0 - model koszyka z endpointem - [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/14aad1ce929c09507db4f77a849158e1af292913)
 
-:white_check_mark: 4.5 - model kategorii z relacją między kategorią i produktem
+:white_check_mark: 4.5 - model kategorii z relacją między kategorią i produktem - [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/3aaed6322c513e1bf04d64cf104a1516e754e31b)
 
 :x: 5.0 - zapytania pogrupowane w gormowe scope'y
  

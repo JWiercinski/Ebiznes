@@ -153,3 +153,4 @@ func (cc *CategoryController) Getcategory(sth echo.Context) error {
 	}
 	return sth.String(http.StatusOK, fmt.Sprintf("Oto kategoria o indeksie %s: Nazwa - %s, Produkty:\n%s", id, categ.NAME, productsStr))
 }
+

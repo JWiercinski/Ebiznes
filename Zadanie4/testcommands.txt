@@ -4,7 +4,6 @@ curl http://localhost:22222/kill
 DODAJ PRODUKT (Z OPCJONALNYM ID KATEGORII)
 curl -X POST -H "Content-Type: application/json" -d '{"NAME":"JumpinJack", "PRICE":1.02,"CATEGORYID":2}' http://localhost:22222/product
 
-
 ZMODYFIKUJ PRODUKT (KAŻDA WARTOŚĆ W JSON OPCJONALNA)
 curl -X PUT -H "Content-Type: application/json" -d '{"NAME":"MAKUMBA", "PRICE":12.55, "CATEGORYID":2}' http://localhost:22222/product/1
 
