@@ -13,6 +13,7 @@ func main() {
 	db := dbconn()
 	pc := controllers.ProductController{}
 	bc := controllers.BasketController{}
+	cc := controllers.CategoryController{}
 	echoapp.Use(func(next echo.HandlerFunc) echo.HandlerFunc {
 		return func(cont echo.Context) error {
 			cont.Set("db", db)
@@ -33,6 +34,11 @@ func main() {
 	echoapp.GET("/basket", bc.Getbaskets)
 	echoapp.DELETE("/basket/:id", bc.Deletebasket)
 	echoapp.PUT("/basket/:id", bc.Modifybasket)
+	echoapp.POST("/category", cc.Addcategory)
+	echoapp.PUT("/category/:id", cc.Renamecategory)
+	echoapp.DELETE("/category/:id", cc.DeleteCategory)
+	echoapp.GET("/category", cc.Getallcategories)
+	echoapp.GET("/category/:id", cc.Getcategory)
 	echoapp.Start(":22222")
 }
 

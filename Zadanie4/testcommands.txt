@@ -1,11 +1,12 @@
 WYŁĄCZ PROGRAM:
 curl http://localhost:22222/kill
 
-DODAJ PRODUKT
-curl -X POST -H "Content-Type: application/json" -d '{"NAME":"Sniper", "PRICE":12}' http://localhost:22222/product
+DODAJ PRODUKT (Z OPCJONALNYM ID KATEGORII)
+curl -X POST -H "Content-Type: application/json" -d '{"NAME":"JumpinJack", "PRICE":1.02,"CATEGORYID":2}' http://localhost:22222/product
 
-ZMODYFIKUJ PRODUKT
-curl -X PUT -H "Content-Type: application/json" -d '{"NAME":"MAKUMBA", "PRICE":12.55}' http://localhost:22222/product/1
+
+ZMODYFIKUJ PRODUKT (KAŻDA WARTOŚĆ W JSON OPCJONALNA)
+curl -X PUT -H "Content-Type: application/json" -d '{"NAME":"MAKUMBA", "PRICE":12.55, "CATEGORYID":2}' http://localhost:22222/product/1
 
 USUŃ PRODUKT
 curl -X DELETE http://localhost:22222/product/5  
@@ -30,3 +31,18 @@ curl -X DELETE http://localhost:22222/basket/4
 
 ZMODYFIKUJ KOSZYK
 curl -X PUT -H "Content-Type: application/json" -d '{"USER":"BLACKBERRY", "VALUE":22222, "COUNT":111}' http://localhost:22222/basket/3
+
+DODAJ KATEGORIĘ
+curl -X POST -H "Content-Type: application/json" -d '{"NAME":"Telefony"}' http://localhost:22222/category     
+
+ZMODYFIKUJ KATEGORIĘ
+curl -X PUT -H "Content-Type: application/json" -d '{"NAME":"Smartfony"}' http://localhost:22222/category/2
+
+USUŃ KATEGORIĘ
+curl -X DELETE http://localhost:22222/category/2
+
+ZOBACZ WSZYSTKIE KATEGORIE
+curl -X GET http://localhost:22222/category
+
+ZOBACZ JEDNĄ KATEGORIĘ
+curl -X GET http://localhost:22222/category/1

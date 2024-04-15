@@ -11,6 +11,7 @@ import (
 type ProductController struct{}
 
 func (pc *ProductController) Addproduct(sth echo.Context) error {
+	categoryname := "INNE"
 	product := new(models.ProductJ)
 	dbprod := new(models.Product)
 	if err := sth.Bind(product); err != nil {
@@ -18,6 +19,14 @@ func (pc *ProductController) Addproduct(sth echo.Context) error {
 	}
 	db := sth.Get("db").(*gorm.DB)
 	errors := 0
+	if product.CATEGORYID > 1 {
+		otherc := new(models.Category)
+		otherc.ID = product.CATEGORYID
+		if err := db.Model(&models.Category{}).First(&otherc).Error; err == nil {
+			dbprod.CATEGORYID = product.CATEGORYID
+			categoryname = otherc.NAME
+		}
+	}
 	if len(product.NAME) > 0 {
 		dbprod.NAME = product.NAME
 	} else {
@@ -35,8 +44,8 @@ func (pc *ProductController) Addproduct(sth echo.Context) error {
 		}
 	}
 	if errors == 0 {
-		db.Create(&models.Product{NAME: dbprod.NAME, PRICE: dbprod.PRICE})
-		returner := string("Stworzono produkt " + dbprod.NAME + " o cenie " + strconv.FormatFloat(product.PRICE, 'f', 2, 64))
+		db.Create(&models.Product{NAME: dbprod.NAME, PRICE: dbprod.PRICE, CATEGORYID: dbprod.CATEGORYID})
+		returner := string("Stworzono produkt " + dbprod.NAME + " o cenie " + strconv.FormatFloat(product.PRICE, 'f', 2, 64) + ", należący do kategorii " + categoryname)
 		return sth.String(http.StatusCreated, returner)
 	} else {
 		return sth.String(http.StatusBadRequest, "Otrzymano albo pustą nazwę, albo cenę która nie jest ceną...")
@@ -44,6 +53,7 @@ func (pc *ProductController) Addproduct(sth echo.Context) error {
 }
 
 func (pc *ProductController) Updateproduct(sth echo.Context) error {
+	categoryname := "INNE"
 	id := sth.Param("id")
 	if len(id) == 0 {
 		return sth.String(http.StatusBadRequest, "Nie podano ID")
@@ -65,6 +75,14 @@ func (pc *ProductController) Updateproduct(sth echo.Context) error {
 			if len(product.NAME) > 0 {
 				prod.NAME = product.NAME
 			}
+			if product.CATEGORYID > 1 {
+				otherc := new(models.Category)
+				otherc.ID = product.CATEGORYID
+				if err := db.Model(&models.Category{}).First(&otherc).Error; err == nil {
+					prod.CATEGORYID = product.CATEGORYID
+					categoryname = otherc.NAME
+				}
+			}
 			if product.PRICE > 0 {
 				checker := strconv.FormatFloat(product.PRICE, 'f', 2, 64)
 				theprice, thebug := strconv.ParseFloat(checker, 64)
@@ -73,7 +91,7 @@ func (pc *ProductController) Updateproduct(sth echo.Context) error {
 				}
 			}
 			db.Save(&prod)
-			returner := string("Zmodyfikowano produkt o indeksie " + id + ". Jego obecna nazwa to " + prod.NAME + ", a cena to " + strconv.FormatFloat(prod.PRICE, 'f', 2, 64))
+			returner := string("Zmodyfikowano produkt o indeksie " + id + ". Jego obecna nazwa to " + prod.NAME + ", cena to " + strconv.FormatFloat(prod.PRICE, 'f', 2, 64) + ", a kategoria to " + categoryname)
 			return sth.String(http.StatusOK, returner)
 		}
 	}
@@ -111,7 +129,10 @@ func (pc *ProductController) Getoneproduct(sth echo.Context) error {
 	if err2 != nil {
 		return sth.String(http.StatusNotFound, "Podany indeks nie istnieje w bazie danych.")
 	}
-	return sth.String(http.StatusOK, "Oto element o indeksie "+id+": Nazwa - "+prod.NAME+", Cena - "+strconv.FormatFloat(prod.PRICE, 'f', 2, 64))
+	otherc := new(models.Category)
+	otherc.ID = prod.CATEGORYID
+	db.Model(&models.Category{}).First(&otherc)
+	return sth.String(http.StatusOK, "Oto element o indeksie "+id+": Nazwa - "+prod.NAME+", Cena - "+strconv.FormatFloat(prod.PRICE, 'f', 2, 64)+", Kategoria - "+otherc.NAME)
 }
 func (pc *ProductController) Getallproducts(sth echo.Context) error {
 	db := sth.Get("db").(*gorm.DB)

@@ -46,9 +46,9 @@ Kod: Zadanie3
 
 :white_check_mark: 3.5 - model produktów z wykorzystaniem gorm - [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/61e4c41c12b8b3ce6d30712e0eccf3d3b42b7144)
 
-:white_check_mark: 4.0 - model koszyka z endpointem
+:white_check_mark: 4.0 - model koszyka z endpointem - [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/14aad1ce929c09507db4f77a849158e1af292913)
 
-:x: 4.5 - model kategorii z relacją między kategorią i produktem
+:white_check_mark: 4.5 - model kategorii z relacją między kategorią i produktem
 
 :x: 5.0 - zapytania pogrupowane w gormowe scope'y
  
