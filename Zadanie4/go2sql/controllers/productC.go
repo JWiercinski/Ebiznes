@@ -22,7 +22,7 @@ func (pc *ProductController) Addproduct(sth echo.Context) error {
 	if product.CATEGORYID > 1 {
 		otherc := new(models.Category)
 		otherc.ID = product.CATEGORYID
-		if err := db.Model(&models.Category{}).First(&otherc).Error; err == nil {
+		if err := db.Scopes(cmodel).First(&otherc).Error; err == nil {
 			dbprod.CATEGORYID = product.CATEGORYID
 			categoryname = otherc.NAME
 		}
@@ -78,8 +78,12 @@ func (pc *ProductController) Updateproduct(sth echo.Context) error {
 			if product.CATEGORYID > 1 {
 				otherc := new(models.Category)
 				otherc.ID = product.CATEGORYID
-				if err := db.Model(&models.Category{}).First(&otherc).Error; err == nil {
+				if err := db.Scopes(cmodel).First(&otherc).Error; err == nil {
 					prod.CATEGORYID = product.CATEGORYID
+					categoryname = otherc.NAME
+				} else {
+					otherc.ID = prod.CATEGORYID
+					db.Scopes(cmodel).First(&otherc)
 					categoryname = otherc.NAME
 				}
 			}
@@ -131,7 +135,7 @@ func (pc *ProductController) Getoneproduct(sth echo.Context) error {
 	}
 	otherc := new(models.Category)
 	otherc.ID = prod.CATEGORYID
-	db.Model(&models.Category{}).First(&otherc)
+	db.Scopes(cmodel).First(&otherc)
 	return sth.String(http.StatusOK, "Oto element o indeksie "+id+": Nazwa - "+prod.NAME+", Cena - "+strconv.FormatFloat(prod.PRICE, 'f', 2, 64)+", Kategoria - "+otherc.NAME)
 }
 func (pc *ProductController) Getallproducts(sth echo.Context) error {
@@ -140,3 +144,6 @@ func (pc *ProductController) Getallproducts(sth echo.Context) error {
 	db.Model(&models.Product{}).Find(&prods)
 	return sth.JSON(http.StatusOK, &prods)
 }
+
+// Sprawny scope, użyty 4 razy...
+func cmodel(db *gorm.DB) *gorm.DB { return db.Model(&models.Category{}) }

@@ -7,6 +7,7 @@ import (
 	"net/http"
 )
 
+// Dwa scope'y, po jednym w produktach i kategorii. Scope zdefiniowany na spodzie kontrolera
 func main() {
 	echoapp := echo.New()
 	echoapp.Use(middleware.CORS())

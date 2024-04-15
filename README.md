@@ -50,6 +50,6 @@ Kod: Zadanie3
 
 :white_check_mark: 4.5 - model kategorii z relacją między kategorią i produktem - [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/3aaed6322c513e1bf04d64cf104a1516e754e31b)
 
-:x: 5.0 - zapytania pogrupowane w gormowe scope'y
+:white_check_mark: 5.0 - zapytania pogrupowane w gormowe scope'y
  
 Kod: Zadanie4

@@ -95,7 +95,7 @@ func (cc *CategoryController) DeleteCategory(sth echo.Context) error {
 func (cc *CategoryController) Getallcategories(sth echo.Context) error {
 	db := sth.Get("db").(*gorm.DB)
 	var categ = []models.Category{}
-	db.Preload("PRODUCTS").Find(&categ)
+	db.Scopes(PRLD).Find(&categ)
 	var categJ2 = []models.CategoryJ2{}
 	for _, cat := range categ {
 		var prodsJ2 = []models.ProductJ2{}
@@ -143,7 +143,7 @@ func (cc *CategoryController) Getcategory(sth echo.Context) error {
 		return sth.String(http.StatusBadRequest, "Podany indeks nie jest liczbą naturalną...")
 	}
 	var categ = models.Category{ID: index}
-	err2 := db.Preload("PRODUCTS").First(&categ).Error
+	err2 := db.Scopes(PRLD).First(&categ).Error
 	if err2 != nil {
 		return sth.String(http.StatusNotFound, "Podany indeks nie istnieje w bazie danych.")
 	}
@@ -154,3 +154,5 @@ func (cc *CategoryController) Getcategory(sth echo.Context) error {
 	return sth.String(http.StatusOK, fmt.Sprintf("Oto kategoria o indeksie %s: Nazwa - %s, Produkty:\n%s", id, categ.NAME, productsStr))
 }
 
+// Sprawny scope, użyty 2 razy...
+func PRLD(db *gorm.DB) *gorm.DB { return db.Preload("PRODUCTS") }
