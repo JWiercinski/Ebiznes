@@ -12,5 +12,6 @@ func dbconn() *gorm.DB {
 		panic("Połączenie z bazą danych nie zostało ustanowione")
 	}
 	mydb.AutoMigrate(&models.Product{})
+	mydb.AutoMigrate(&models.Basket{})
 	return mydb
 }

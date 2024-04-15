@@ -42,13 +42,14 @@ Kod: Zadanie3
 
 **Zadanie 4** - Go & Echo
 
-:white_check_mark: 3.0 - kontroler produktów zgodny z CRUD
+:white_check_mark: 3.0 - kontroler produktów zgodny z CRUD - [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/61e4c41c12b8b3ce6d30712e0eccf3d3b42b7144)
 
-:white_check_mark: 3.5 - model produktów z wykorzystaniem gorm
+:white_check_mark: 3.5 - model produktów z wykorzystaniem gorm - [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/61e4c41c12b8b3ce6d30712e0eccf3d3b42b7144)
 
-:x: 4.0 - model koszyka z endpointem
+:white_check_mark: 4.0 - model koszyka z endpointem
 
 :x: 4.5 - model kategorii z relacją między kategorią i produktem
 
 :x: 5.0 - zapytania pogrupowane w gormowe scope'y
  
+Kod: Zadanie4
