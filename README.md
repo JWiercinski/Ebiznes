@@ -50,6 +50,32 @@ Kod: Zadanie3
 
 :white_check_mark: 4.5 - model kategorii z relacją między kategorią i produktem - [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/3aaed6322c513e1bf04d64cf104a1516e754e31b)
 
-:white_check_mark: 5.0 - zapytania pogrupowane w gormowe scope'y
+:white_check_mark: 5.0 - zapytania pogrupowane w gormowe scope'y - [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/c0956db59c5b148dfe84032d67ee7e1b5e846c6c)
  
 Kod: Zadanie4
+
+**Zadanie 4** - Klient(ReactJS) & Serwer
+
+:x: 3.0 - produkty (pobieranie danych z serwera) i płatności (wysyłka danych na serwer)
+
+:x: 3.5 - koszyk z widokiem oraz routing
+
+:x: 4.0 - wykorzystanie React hooks do przesyłania danych
+
+:x: 4.5 - uruchomienie przez docker-compose
+
+:x: 5.0 - wykorzystanie axios, dodanie nagłówków CORS
+
+Kod: Zadanie5
+
+**Zadanie 6** - Testy funkcjonalne i jednostkowe
+
+:white_check_mark: 3.0 - 20 przypadków testów funkcjonalnych w CypressJS lub Selenium
+
+:white_check_mark: 3.5 - 50 asercji w testach funkcjonalnych
+
+:x: 4.0 - testy jednostkowe poprzedniego projektu
+
+:x: 4.5 - 50 asercji w testach jednostkowych
+
+:x: 5.0 - uruchomienie testów funkcjonalnych na Browserstacku
