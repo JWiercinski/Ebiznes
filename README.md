@@ -54,9 +54,9 @@ Kod: Zadanie3
  
 Kod: Zadanie4
 
-**Zadanie 4** - Klient(ReactJS) & Serwer
+**Zadanie 5** - Klient(ReactJS) & Serwer
 
-:x: 3.0 - produkty (pobieranie danych z serwera) i płatności (wysyłka danych na serwer)
+:white_check_mark: 3.0 - produkty (pobieranie danych z serwera) i płatności (wysyłka danych na serwer)
 
 :x: 3.5 - koszyk z widokiem oraz routing
 
@@ -70,12 +70,14 @@ Kod: Zadanie5
 
 **Zadanie 6** - Testy funkcjonalne i jednostkowe
 
-:white_check_mark: 3.0 - 20 przypadków testów funkcjonalnych w CypressJS lub Selenium
+:white_check_mark: 3.0 - 20 przypadków testów funkcjonalnych w CypressJS lub Selenium - [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/42fc441b887365b502c82305d18ba004d5202871)
 
-:white_check_mark: 3.5 - 50 asercji w testach funkcjonalnych
+:white_check_mark: 3.5 - 50 asercji w testach funkcjonalnych - [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/42fc441b887365b502c82305d18ba004d5202871)
 
-:x: 4.0 - testy jednostkowe poprzedniego projektu
+:x: 4.0 - testy jednostkowe jednego z poprzednich projektów
 
 :x: 4.5 - 50 asercji w testach jednostkowych
 
 :x: 5.0 - uruchomienie testów funkcjonalnych na Browserstacku
+
+Kod: Zadanie 6
