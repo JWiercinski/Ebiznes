@@ -8,6 +8,7 @@ import (
 	"gorm.io/gorm"
 	"math"
 	"net/http"
+	"strconv"
 )
 
 func main() {
@@ -27,6 +28,7 @@ func main() {
 	//backend.GET("/test", teststuff)
 	backend.GET("/products", sendProducts)
 	backend.POST("/payment", logPayment)
+	backend.POST("/basket", logBasket)
 	backend.Start(":22222")
 }
 
@@ -59,11 +61,38 @@ func logPayment(context echo.Context) error {
 		error = errorParser(error, "Opłata nie jest w odpowiednim formacie - zawiera więcej niż dwie istotne cyfry w formacie dziesiętnym")
 	}
 	if len(error) == 0 {
-		database.Create(&paymentdb{USER: paydata.USER, METHOD: paydata.METHOD, AMOUNT: paydata.AMOUNT})
-		return context.String(http.StatusOK, "OK")
+		newpayment := &paymentdb{USER: paydata.USER, METHOD: paydata.METHOD, AMOUNT: paydata.AMOUNT}
+		database.Create(newpayment)
+		return context.String(http.StatusOK, strconv.FormatUint(newpayment.ID, 10))
 	} else {
 		return context.String(http.StatusBadRequest, error)
 	}
+}
+
+func logBasket(context echo.Context) error {
+	sentbasket := new(basket)
+	basketdb := new(boughtGames)
+	if err := context.Bind(&sentbasket); err != nil {
+		return context.String(http.StatusBadRequest, "Błąd obsługi zakupionych produktów")
+	}
+	paym := new(paymentdb)
+	payID := uint64(sentbasket.PAYID)
+	paym.ID = payID
+	database := context.Get("database").(*gorm.DB)
+	if err := database.Model(&paymentdb{}).First(paym).Error; err != nil {
+		return context.String(http.StatusBadRequest, "Indeks zakupu nie istnieje")
+	}
+	basketdb.PAYMENTID = payID
+	if sentbasket.GAMEID < 1 || sentbasket.GAMEID > 10 {
+		return context.String(http.StatusBadRequest, "Indeks produktu nie istnieje")
+	}
+	basketdb.GAMEID = uint64(sentbasket.GAMEID)
+	if sentbasket.QUANTITY < 1 {
+		return context.String(http.StatusBadRequest, "Nie da się kupić mniej niż 1 produktu danego typu")
+	}
+	basketdb.QUANTITY = sentbasket.QUANTITY
+	database.Create(&boughtGames{PAYMENTID: basketdb.PAYMENTID, GAMEID: basketdb.GAMEID, QUANTITY: basketdb.QUANTITY})
+	return context.String(http.StatusOK, "Zakup wprowadzony")
 }
 
 func errorParser(error string, message string) string {
@@ -93,6 +122,19 @@ type paymentdb struct {
 	AMOUNT float64
 }
 
+type basket struct {
+	PAYID    int `json:"PAYID"`
+	GAMEID   int `json:"GAMEID"`
+	QUANTITY int `json:"QUANTITY"`
+}
+
+type boughtGames struct {
+	gorm.Model
+	PAYMENTID uint64
+	GAMEID    uint64
+	QUANTITY  int
+}
+
 func kill(c echo.Context) error {
 	err := c.Echo().Shutdown(context.Background())
 	if err != nil {
@@ -109,6 +151,7 @@ func connectDB() *gorm.DB {
 		panic("Nie można ustanowić połączenia z bazą danych")
 	}
 	database.AutoMigrate(&paymentdb{})
+	database.AutoMigrate(&boughtGames{})
 	return database
 }
 

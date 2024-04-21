@@ -56,11 +56,11 @@ Kod: Zadanie4
 
 **Zadanie 5** - Klient(ReactJS) & Serwer
 
-:white_check_mark: 3.0 - produkty (pobieranie danych z serwera) i płatności (wysyłka danych na serwer)
+:white_check_mark: 3.0 - produkty (pobieranie danych z serwera) i płatności (wysyłka danych na serwer) - [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/5d8f4c53763d305ffbce0d982979c793e32f98a7)
 
-:x: 3.5 - koszyk z widokiem oraz routing
+:white_check_mark: 3.5 - koszyk z widokiem oraz routing
 
-:x: 4.0 - wykorzystanie React hooks do przesyłania danych
+:white_check_mark: 4.0 - wykorzystanie React hooks do przesyłania danych
 
 :x: 4.5 - uruchomienie przez docker-compose
 

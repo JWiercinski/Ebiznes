@@ -1,11 +1,17 @@
-import {useState} from "react";
+import React, {useState} from "react";
 import axios from "axios";
+import {BasketContext} from "./Basket";
+import {Link} from "react-router-dom";
 
 function Payments(){
     const [user, setUser] = useState("")
     const [method, setMethod] = useState("")
-    const [price, setPrice]=useState("")
+    //const [price, setPrice]=useState("")
     const [info, setInfo]=useState("")
+    const { basket, setBasket } = React.useContext(BasketContext);
+    const total = basket.reduce((accumulator, item) => {
+        return accumulator + (item.product.PRICE * item.quantity);
+    }, 0);
     const sendonsubmit = async (event) => {
         event.preventDefault()
         if (!method) {
@@ -15,11 +21,27 @@ function Payments(){
         const data = {
             USER: user,
             METHOD: method,
-            AMOUNT: parseFloat(price)
+            AMOUNT: total
         }
         try {
             const response = await axios.post("http://localhost:22222/payment", data)
             setInfo(`Sukces!`)
+            for (let i = 0; i < basket.length; i++) {
+                const item = basket[i];
+                const data2 ={
+                    PAYID: parseInt(response.data),
+                    GAMEID: item.product.ID,
+                    QUANTITY: item.quantity
+                }
+                try {
+                    const response = await axios.post("http://localhost:22222/basket", data2)
+                }
+                catch (e) {
+                    setInfo(e)
+                }
+            }
+            localStorage.removeItem("basket")
+            window.location.reload()
         }
         catch (error){
             setInfo(`Mamy problem, nie mogliśmy zrealizować płatności. ${error.response.data}`)
@@ -27,6 +49,9 @@ function Payments(){
     }
     return (
         <div className="Payments">
+            <Link to="/"><button>Strona główna</button></Link>
+            <Link to="/products"><button>Kontynuuj zakupy</button></Link>
+            <Link to="/basket"><button>Wróć do koszyka</button></Link>
             <h1>Dokonaj płatności</h1>
             <form onSubmit={sendonsubmit}>
                 <p>Nazwa Użytkownika</p>
@@ -38,9 +63,7 @@ function Payments(){
                     <option value="BANKTRANSFER">Przelew bankowy</option>
                     <option value="PAYPAL">PayPal</option>
                 </select>
-                <p>Kwota</p>
-                <input type="number" step="0.01" value={price} onChange={(e)=>setPrice(e.target.value)} placeholder="Cena do zapłaty" required></input>
-                <p></p>
+                <h3>Kwota: {total} PLN</h3>
                 <button type="submit">Kontynuuj</button>
             </form>
             <h2>{info}</h2>
@@ -49,10 +72,3 @@ function Payments(){
 }
 
 export default Payments
-/*
-type payment struct {
-    USER   string  `json:"USER"`
-    METHOD string  `json:"METHOD"`
-    AMOUNT float64 `json:"AMOUNT"`
-}
-*/
