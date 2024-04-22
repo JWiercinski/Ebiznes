@@ -62,11 +62,11 @@ Kod: Zadanie4
 
 :white_check_mark: 4.0 - wykorzystanie React hooks do przesyłania danych - [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/5baf024a0adb4cc199e4268777ee6b6a7c856a23)
 
-:white_check_mark: 4.5 - uruchomienie przez docker-compose
+:white_check_mark: 4.5 - uruchomienie przez docker-compose - [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/61c8e109e7d839a247fdf5fd5740145745dcd25d)
 
-:white_check_mark: 5.0 - wykorzystanie axios, dodanie nagłówków CORS
+:white_check_mark: 5.0 - wykorzystanie axios, dodanie nagłówków CORS - [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/61c8e109e7d839a247fdf5fd5740145745dcd25d)
 
-Kod: Zadanie5
+Kod: Zadanie5, [LINK DO DOCKEROWEGO OBRAZU APLIKACJI SERWERA](https://hub.docker.com/repository/docker/jwiercinski/goapp/general), [LINK DO DOCKEROWEGO OBRAZU APLIKACJI KLIENTA](https://hub.docker.com/repository/docker/jwiercinski/reactapp/general)
 
 **Zadanie 6** - Testy funkcjonalne i jednostkowe
 
