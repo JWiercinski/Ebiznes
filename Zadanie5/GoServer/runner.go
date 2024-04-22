@@ -14,7 +14,7 @@ import (
 func main() {
 	products := initproducts()
 	backend := echo.New()
-	backend.Use(middleware.CORS())
+	backend.Use(middleware.CORSWithConfig(middleware.CORSConfig{AllowOrigins: []string{"http://localhost:22222", "http://localhost:3000"}, AllowMethods: []string{http.MethodGet, http.MethodPost}}))
 	database := connectDB()
 	backend.Use(func(next echo.HandlerFunc) echo.HandlerFunc {
 		return func(context echo.Context) error {

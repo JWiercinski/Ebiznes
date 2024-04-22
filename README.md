@@ -58,13 +58,13 @@ Kod: Zadanie4
 
 :white_check_mark: 3.0 - produkty (pobieranie danych z serwera) i płatności (wysyłka danych na serwer) - [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/5d8f4c53763d305ffbce0d982979c793e32f98a7)
 
-:white_check_mark: 3.5 - koszyk z widokiem oraz routing
+:white_check_mark: 3.5 - koszyk z widokiem oraz routing - [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/5baf024a0adb4cc199e4268777ee6b6a7c856a23)
 
-:white_check_mark: 4.0 - wykorzystanie React hooks do przesyłania danych
+:white_check_mark: 4.0 - wykorzystanie React hooks do przesyłania danych - [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/5baf024a0adb4cc199e4268777ee6b6a7c856a23)
 
-:x: 4.5 - uruchomienie przez docker-compose
+:white_check_mark: 4.5 - uruchomienie przez docker-compose
 
-:x: 5.0 - wykorzystanie axios, dodanie nagłówków CORS
+:white_check_mark: 5.0 - wykorzystanie axios, dodanie nagłówków CORS
 
 Kod: Zadanie5
 
@@ -74,9 +74,9 @@ Kod: Zadanie5
 
 :white_check_mark: 3.5 - 50 asercji w testach funkcjonalnych - [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/42fc441b887365b502c82305d18ba004d5202871)
 
-:x: 4.0 - testy jednostkowe jednego z poprzednich projektów
+:x: 4.0 - testy jednostkowe jednego z poprzednich projektów z minimum 50 asercjami
 
-:x: 4.5 - 50 asercji w testach jednostkowych
+:x: 4.5 - testy API z pokryciem wszystkich endpointów z minimum jednym scenariuszem negatywnym na endpoint
 
 :x: 5.0 - uruchomienie testów funkcjonalnych na Browserstacku
 
