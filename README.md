@@ -80,4 +80,6 @@ Kod: Zadanie5, [LINK DO DOCKEROWEGO OBRAZU APLIKACJI SERWERA](https://hub.docker
 
 :x: 5.0 - uruchomienie testów funkcjonalnych na Browserstacku
 
-Kod: Zadanie 6
+Kod testów funkcjonalnych: Zadanie6
+
+Kod testów jednostkowych: Zadanie6/testtask4/testRun_test.go
