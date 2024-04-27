@@ -74,12 +74,12 @@ Kod: Zadanie5, [LINK DO DOCKEROWEGO OBRAZU APLIKACJI SERWERA](https://hub.docker
 
 :white_check_mark: 3.5 - 50 asercji w testach funkcjonalnych - [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/42fc441b887365b502c82305d18ba004d5202871)
 
-:x: 4.0 - testy jednostkowe jednego z poprzednich projektów z minimum 50 asercjami
+:white_check_mark: 4.0 - testy jednostkowe jednego z poprzednich projektów z minimum 50 asercjami - [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/9c0c1a7709cbc05b186a7335803edf9e032aae79)
 
-:x: 4.5 - testy API z pokryciem wszystkich endpointów z minimum jednym scenariuszem negatywnym na endpoint
+:white_check_mark: 4.5 - testy API z pokryciem wszystkich endpointów z minimum jednym scenariuszem negatywnym na endpoint - [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/b91e60f8af327c0de0e97d338bc293bcbe9eb0ba)
 
-:x: 5.0 - uruchomienie testów funkcjonalnych na Browserstacku
+:white_check_mark: 5.0 - uruchomienie testów funkcjonalnych na Browserstacku
 
-Kod testów funkcjonalnych: Zadanie6
+Kod testów funkcjonalnych i endpointów: Zadanie6
 
 Kod testów jednostkowych: Zadanie6/testtask4/testRun_test.go
