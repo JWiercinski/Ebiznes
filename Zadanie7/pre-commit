@@ -1,0 +1,12 @@
+#!/bin/sh
+exec 1>&2
+echo "Golangci-lint uruchamia się..."
+cd GoServer
+golangci-lint run
+LINT_EXIT_CODE=$?
+if [ $LINT_EXIT_CODE -ne 0 ]; then
+  echo "Nastąpił problem z golangi-lint. Commit odwołany"
+  exit 1
+fi
+echo "Testy zakończone pomyślnie, commit możliwy do wykonania"
+exit 0

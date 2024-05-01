@@ -76,10 +76,22 @@ Kod: Zadanie5, [LINK DO DOCKEROWEGO OBRAZU APLIKACJI SERWERA](https://hub.docker
 
 :white_check_mark: 4.0 - testy jednostkowe jednego z poprzednich projektów z minimum 50 asercjami - [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/9c0c1a7709cbc05b186a7335803edf9e032aae79)
 
-:white_check_mark: 4.5 - testy API z pokryciem wszystkich endpointów z minimum jednym scenariuszem negatywnym na endpoint - [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/b91e60f8af327c0de0e97d338bc293bcbe9eb0ba)
+:white_check_mark: 4.5 - testy API z pokryciem wszystkich endpointów z minimum jednym scenariuszem negatywnym na endpoint - [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/61d8d1e06d3ab9d8032490e42fba0392158658df)
 
-:white_check_mark: 5.0 - uruchomienie testów funkcjonalnych na Browserstacku
+:white_check_mark: 5.0 - uruchomienie testów funkcjonalnych na Browserstacku - [LINK DO COMMITA] (https://github.com/JWiercinski/Ebiznes/commit/b91e60f8af327c0de0e97d338bc293bcbe9eb0ba)
 
 Kod testów funkcjonalnych i endpointów: Zadanie6
 
 Kod testów jednostkowych: Zadanie6/testtask4/testRun_test.go
+
+**Zadanie 7** - Testy statyczne
+
+:white_check_mark: 3.0 - dodanie lintera odpowiedniego dla kodu aplikacji serwerowej do git hooks
+
+:white_check_mark: 3.5 - eliminacja bugów aplikacji serwerowej według sonarcloud [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=JWiercinski_sonartest&metric=bugs)](https://sonarcloud.io/summary/new_code?id=JWiercinski_sonartest)
+
+:white_check_mark: 4.0 - eliminacja code smells aplikacji serwerowej według sonarcloud [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=JWiercinski_sonartest&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=JWiercinski_sonartest)
+
+:white_check_mark: 4.5 - eliminacja podatności oraz błędów bezpieczeństwa aplikacji serwerowej według sonarcloud [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=JWiercinski_sonartest&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=JWiercinski_sonartest) [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=JWiercinski_sonartest&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=JWiercinski_sonartest)
+
+:x: eliminacja błędów oraz code smells aplikacji klienckiej według sonarcloud
