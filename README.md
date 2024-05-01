@@ -78,7 +78,7 @@ Kod: Zadanie5, [LINK DO DOCKEROWEGO OBRAZU APLIKACJI SERWERA](https://hub.docker
 
 :white_check_mark: 4.5 - testy API z pokryciem wszystkich endpointów z minimum jednym scenariuszem negatywnym na endpoint - [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/61d8d1e06d3ab9d8032490e42fba0392158658df)
 
-:white_check_mark: 5.0 - uruchomienie testów funkcjonalnych na Browserstacku - [LINK DO COMMITA] (https://github.com/JWiercinski/Ebiznes/commit/b91e60f8af327c0de0e97d338bc293bcbe9eb0ba)
+:white_check_mark: 5.0 - uruchomienie testów funkcjonalnych na Browserstacku - [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/b91e60f8af327c0de0e97d338bc293bcbe9eb0ba)
 
 Kod testów funkcjonalnych i endpointów: Zadanie6
 
@@ -86,12 +86,18 @@ Kod testów jednostkowych: Zadanie6/testtask4/testRun_test.go
 
 **Zadanie 7** - Testy statyczne
 
-:white_check_mark: 3.0 - dodanie lintera odpowiedniego dla kodu aplikacji serwerowej do git hooks
+:white_check_mark: 3.0 - dodanie lintera odpowiedniego dla kodu aplikacji serwerowej do git hooks [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/4651216e03d05f9b0ac712825f363672982ee22b)
 
-:white_check_mark: 3.5 - eliminacja bugów aplikacji serwerowej według sonarcloud [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=JWiercinski_sonartest&metric=bugs)](https://sonarcloud.io/summary/new_code?id=JWiercinski_sonartest)
+:white_check_mark: 3.5 - eliminacja bugów aplikacji serwerowej według sonarcloud [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/4651216e03d05f9b0ac712825f363672982ee22b) [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=JWiercinski_sonartest&metric=bugs)](https://sonarcloud.io/summary/new_code?id=JWiercinski_sonartest)
 
-:white_check_mark: 4.0 - eliminacja code smells aplikacji serwerowej według sonarcloud [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=JWiercinski_sonartest&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=JWiercinski_sonartest)
+:white_check_mark: 4.0 - eliminacja code smells aplikacji serwerowej według sonarcloud [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/4651216e03d05f9b0ac712825f363672982ee22b) [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=JWiercinski_sonartest&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=JWiercinski_sonartest)
 
-:white_check_mark: 4.5 - eliminacja podatności oraz błędów bezpieczeństwa aplikacji serwerowej według sonarcloud [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=JWiercinski_sonartest&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=JWiercinski_sonartest) [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=JWiercinski_sonartest&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=JWiercinski_sonartest)
+:white_check_mark: 4.5 - eliminacja podatności oraz błędów bezpieczeństwa aplikacji serwerowej według sonarcloud [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/4651216e03d05f9b0ac712825f363672982ee22b) [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=JWiercinski_sonartest&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=JWiercinski_sonartest) [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=JWiercinski_sonartest&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=JWiercinski_sonartest)
 
-:x: eliminacja błędów oraz code smells aplikacji klienckiej według sonarcloud
+:white_check_mark: eliminacja błędów oraz code smells aplikacji klienckiej według sonarcloud [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=JWiercinski_sonartest2&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=JWiercinski_sonartest2) [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=JWiercinski_sonartest2&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=JWiercinski_sonartest2) [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=JWiercinski_sonartest2&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=JWiercinski_sonartest2) [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=JWiercinski_sonartest2&metric=bugs)](https://sonarcloud.io/summary/new_code?id=JWiercinski_sonartest2)
+
+Kod: Zadanie7
+
+Testowane repozytorium serwerowe: [LINK DO REPOZYTORIUM](https://github.com/JWiercinski/sonartest), [LINK DO WYNIKÓW TESTU](https://sonarcloud.io/summary/overall?id=JWiercinski_sonartest)
+
+Testowane repozytorium klienckie: [LINK DO REPOZYTORIUM](https://github.com/JWiercinski/sonartest2), [LINK DO WYNIKÓW TESTU](https://sonarcloud.io/summary/overall?id=JWiercinski_sonartest2)
