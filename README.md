@@ -30,11 +30,11 @@ Kod: Zadanie2, [LINK DO OBRAZU DOCKERA](https://hub.docker.com/repository/docker
 
 :white_check_mark: 3.0 - wysłanie wiadomości na Discord - [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/07834624069a21a01ef203838627e0842afa0be1)
 
-:white_check_mark: 3.5 - odbiór wiadomości z platformy
+:white_check_mark: 3.5 - odbiór wiadomości z platformy - [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/095cfec4acd1ac1acf4eaced46dd8363e9afd2dc)
 
-:white_check_mark: 4.0 - zwrócenie listy kategorii na żądanie
+:white_check_mark: 4.0 - zwrócenie listy kategorii na żądanie - [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/095cfec4acd1ac1acf4eaced46dd8363e9afd2dc)
 
-:x: 4.5 - zwrócenie listy produktów według kategorii
+:white_check_mark: 4.5 - zwrócenie listy produktów według kategorii
 
 :x: 5.0 - obsługa dodatkowej platformy
 
