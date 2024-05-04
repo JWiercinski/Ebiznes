@@ -34,9 +34,9 @@ Kod: Zadanie2, [LINK DO OBRAZU DOCKERA](https://hub.docker.com/repository/docker
 
 :white_check_mark: 4.0 - zwrócenie listy kategorii na żądanie - [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/095cfec4acd1ac1acf4eaced46dd8363e9afd2dc)
 
-:white_check_mark: 4.5 - zwrócenie listy produktów według kategorii
+:white_check_mark: 4.5 - zwrócenie listy produktów według kategorii - [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/8a573c1ba3f483a02490445fb4277cee8a94bf73)
 
-:x: 5.0 - obsługa dodatkowej platformy
+:white_check_mark: 5.0 - obsługa dodatkowej platformy
 
 Kod: Zadanie3
 
