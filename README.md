@@ -36,7 +36,7 @@ Kod: Zadanie2, [LINK DO OBRAZU DOCKERA](https://hub.docker.com/repository/docker
 
 :white_check_mark: 4.5 - zwrócenie listy produktów według kategorii - [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/8a573c1ba3f483a02490445fb4277cee8a94bf73)
 
-:white_check_mark: 5.0 - obsługa dodatkowej platformy
+:white_check_mark: 5.0 - obsługa dodatkowej platformy - [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/1b1c6343ff9a4293e38c51fe34e1c0f8f2b3ce97)
 
 Kod: Zadanie3
 
