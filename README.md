@@ -101,3 +101,15 @@ Kod: Zadanie7
 Testowane repozytorium serwerowe: [LINK DO REPOZYTORIUM](https://github.com/JWiercinski/sonartest), [LINK DO WYNIKÓW TESTU](https://sonarcloud.io/summary/overall?id=JWiercinski_sonartest)
 
 Testowane repozytorium klienckie: [LINK DO REPOZYTORIUM](https://github.com/JWiercinski/sonartest2), [LINK DO WYNIKÓW TESTU](https://sonarcloud.io/summary/overall?id=JWiercinski_sonartest2)
+
+**Zadanie 8** - Rejestracja i logowanie
+
+:white_check_mark: 3.0 - klasyczne logowanie po stronie serwera
+
+:white_check_mark: 3.5 - klasyczna rejestracja po stronie serwera
+
+:x: 4.0 - logowanie przez Google OAuth2
+
+:x: 4.5 - logowanie z wykorzystaniem innego providera OAuth2
+
+:x:: 5.0 - zapisywanie danych logowania OAuth2 po stronie serwera
