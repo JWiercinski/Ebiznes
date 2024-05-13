@@ -4,17 +4,39 @@ import (
 	"context"
 	"crypto/sha256"
 	"encoding/hex"
+	"encoding/json"
 	"errors"
 	"fmt"
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
+	"golang.org/x/oauth2"
+	"golang.org/x/oauth2/github"
+	"golang.org/x/oauth2/google"
 	"gorm.io/driver/sqlite"
 	"gorm.io/gorm"
 	"math/rand"
 	"net/http"
+	"net/url"
 	"strings"
 	"time"
 )
+
+// Do wprowadzenia: dane do linijek 28, 29, 34, 35.
+// Wymagane uprawnienie w przypadku google - dostęp do informacji o adresie e-mail
+var googleConfiguration = &oauth2.Config{
+	RedirectURL:  "http://localhost:22222/googcallback",
+	ClientID:     "POPRAWNY CLIENT ID",
+	ClientSecret: "POPRAWNY CLIENT SEECRET",
+	Scopes:       []string{"https://www.googleapis.com/auth/userinfo.email"},
+	Endpoint:     google.Endpoint,
+}
+var githubConfiguration = &oauth2.Config{
+	ClientSecret: "POPRAWNY CLIENT SECRET",
+	ClientID:     "POPRAWNY CLIENT ID",
+	RedirectURL:  "http://localhost:22222/gitcallback",
+	Scopes:       []string{"user:email"},
+	Endpoint:     github.Endpoint,
+}
 
 func main() {
 	backend := echo.New()
@@ -24,6 +46,7 @@ func main() {
 		panic("Nie można ustanowić połączenia z bazą danych")
 	}
 	database.AutoMigrate(&loginDB{})
+	database.AutoMigrate(&oauthDB{})
 	backend.Use(func(next echo.HandlerFunc) echo.HandlerFunc {
 		return func(cont echo.Context) error {
 			cont.Set("db", database)
@@ -34,7 +57,11 @@ func main() {
 	backend.GET("/kill", killInstance)
 	backend.POST("/register", register)
 	backend.POST("/classic", classicLogin)
-	backend.POST("/google", googleOauth)
+	backend.GET("/google", googleOauth)
+	backend.GET("/googcallback", googleCallback)
+	backend.POST("/gdata", gdata)
+	backend.GET("/git", githubOauth)
+	backend.GET("/gitcallback", githubCallback)
 	err2 := backend.Start(":22222")
 	if err2 != nil {
 		fmt.Println(err)
@@ -119,5 +146,94 @@ func classicLogin(c echo.Context) error {
 }
 
 func googleOauth(c echo.Context) error {
-	return nil
+	return c.Redirect(http.StatusTemporaryRedirect, googleConfiguration.AuthCodeURL("state", oauth2.AccessTypeOffline))
+}
+
+func googleCallback(c echo.Context) error {
+	responsecode := c.QueryParam("code")
+	token, err := googleConfiguration.Exchange(context.Background(), responsecode)
+	if err != nil {
+		return c.String(http.StatusBadRequest, "Nie udało się zalogować za pomocą Google")
+	}
+	client := googleConfiguration.Client(context.Background(), token)
+	resp, err2 := client.Get("https://www.googleapis.com/oauth2/v3/userinfo")
+	//resp, err2 := client.Get("https://www.googleapis.com/plus/v1/people/me")
+	if err2 != nil {
+		return c.String(http.StatusInternalServerError, "Nie udało się pobrać informacji o adresie email"+" "+err2.Error())
+	}
+	defer resp.Body.Close()
+	userInfo := make(map[string]interface{})
+	json.NewDecoder(resp.Body).Decode(&userInfo)
+	responder := new(responder)
+	responder.USER = userInfo["email"].(string)
+	responder.TOKEN = token.AccessToken
+	db := c.Get("db").(*gorm.DB)
+	usr := new(oauthDB)
+	db.First(&usr, "EMAIL = ?", responder.USER)
+	usr.EMAIL = responder.USER
+	usr.TOKEN = responder.TOKEN
+	usr.PROVIDER = "Google"
+	db.Save(usr)
+	value := fmt.Sprintf("%d", usr.ID)
+	//return c.JSON(http.StatusOK, responder)
+	nurl := "http://localhost:3000/ghidden/"
+	u, _ := url.Parse(nurl)
+	q := u.Query()
+	q.Add("id", value)
+	u.RawQuery = q.Encode()
+	return c.Redirect(http.StatusMovedPermanently, u.String())
+}
+
+func gdata(c echo.Context) error {
+	req := new(info)
+	db := c.Get("db").(*gorm.DB)
+	if err := c.Bind(req); err != nil {
+		return err
+	}
+	oauthdb := new(oauthDB)
+	err00 := db.First(&oauthdb, "ID = ?", req.ID).Error
+	if err00 == gorm.ErrRecordNotFound {
+		return c.String(http.StatusBadRequest, "Nie odnaleziono użytkownika o podanych danych")
+	}
+	responder0 := new(responder)
+	responder0.TOKEN = oauthdb.TOKEN
+	responder0.USER = oauthdb.EMAIL
+	return c.JSON(http.StatusOK, responder0)
+}
+
+func githubOauth(c echo.Context) error {
+	return c.Redirect(http.StatusTemporaryRedirect, githubConfiguration.AuthCodeURL("state"))
+}
+
+func githubCallback(c echo.Context) error {
+	responsecode := c.QueryParam("code")
+	token, err := githubConfiguration.Exchange(context.Background(), responsecode)
+	if err != nil {
+		return c.String(http.StatusBadRequest, "Nie udało się zalogować za pomocą GitHub")
+	}
+	client := githubConfiguration.Client(context.Background(), token)
+	resp, err2 := client.Get("https://api.github.com/user/emails")
+	if err2 != nil {
+		return c.String(http.StatusInternalServerError, "Nie udało się pobrać informacji o adresie email"+" "+err2.Error())
+	}
+	defer resp.Body.Close()
+	userInfo := make([]map[string]interface{}, 0)
+	json.NewDecoder(resp.Body).Decode(&userInfo)
+	responder := new(responder)
+	responder.USER = userInfo[0]["email"].(string)
+	responder.TOKEN = token.AccessToken
+	db := c.Get("db").(*gorm.DB)
+	usr := new(oauthDB)
+	db.First(&usr, "EMAIL = ?", responder.USER)
+	usr.EMAIL = responder.USER
+	usr.TOKEN = responder.TOKEN
+	usr.PROVIDER = "GitHub"
+	db.Save(usr)
+	value := fmt.Sprintf("%d", usr.ID)
+	nurl := "http://localhost:3000/ghidden/"
+	u, _ := url.Parse(nurl)
+	q := u.Query()
+	q.Add("id", value)
+	u.RawQuery = q.Encode()
+	return c.Redirect(http.StatusMovedPermanently, u.String())
 }

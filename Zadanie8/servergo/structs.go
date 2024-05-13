@@ -29,3 +29,14 @@ type responder struct {
 	USER  string `json:"USER"`
 	TOKEN string `json:"TOKEN"`
 }
+
+type oauthDB struct {
+	gorm.Model
+	EMAIL    string `gorm:"primaryKey"`
+	TOKEN    string
+	PROVIDER string
+}
+
+type info struct {
+	ID string `json:"ID"`
+}

@@ -104,12 +104,12 @@ Testowane repozytorium klienckie: [LINK DO REPOZYTORIUM](https://github.com/JWie
 
 **Zadanie 8** - Rejestracja i logowanie
 
-:white_check_mark: 3.0 - klasyczne logowanie po stronie serwera
+:white_check_mark: 3.0 - klasyczne logowanie po stronie serwera [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/95ae941c49ed784704a1bb1a19820f619919e42f)
 
-:white_check_mark: 3.5 - klasyczna rejestracja po stronie serwera
+:white_check_mark: 3.5 - klasyczna rejestracja po stronie serwera [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/95ae941c49ed784704a1bb1a19820f619919e42f)
 
-:x: 4.0 - logowanie przez Google OAuth2
+:white_check_mark: 4.0 - logowanie przez Google OAuth2
 
-:x: 4.5 - logowanie z wykorzystaniem innego providera OAuth2
+:white_check_mark: 4.5 - logowanie z wykorzystaniem innego providera OAuth2
 
-:x:: 5.0 - zapisywanie danych logowania OAuth2 po stronie serwera
+:white_check_mark: 5.0 - zapisywanie danych logowania OAuth2 po stronie serwera

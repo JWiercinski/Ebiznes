@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import {Link} from "react-router-dom";
+import axios from "axios";
 
 export const LoginContext = React.createContext();
 export const TokenContext = React.createContext();
@@ -62,6 +63,7 @@ function Main1() {
     const { isLoggedIn, setIsLoggedIn } = React.useContext(LoginContext);
     const {token, setToken} = React.useContext(TokenContext)
     const {user, setUser} = React.useContext(UserContext)
+    const [info, setInfo] = React.useState("")
 
     if (token === null && setIsLoggedIn === true)
     {
@@ -76,6 +78,9 @@ function Main1() {
         setUser(null)
     };
 
+
+
+
     return (
         <div>
             <h1>Witamy {user}</h1>
@@ -83,7 +88,13 @@ function Main1() {
             <Link to="/login"><button disabled={isLoggedIn}>Zaloguj się</button></Link>
             <Link to="/register"><button disabled={isLoggedIn}>Zarejestruj się</button></Link>
             <button onClick={handleLogout} disabled={!isLoggedIn}>Wyloguj się</button>
+            <p></p>
+            <form action="http://localhost:22222/google" method="GET"><button disabled={isLoggedIn} type="submit">Zaloguj się przez Google</button></form>
+            <p></p>
+            <form action="http://localhost:22222/git" method="GET"><button disabled={isLoggedIn} type="submit">Zaloguj się przez GitHub</button></form>
+            <h2>{info}</h2>
         </div>
     );
 }
+
 export default Main1;

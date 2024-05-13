@@ -3,6 +3,7 @@ import {BrowserRouter, Routes, Route} from "react-router-dom";
 import Main1, {LoginProvider, TokenProvider, UserProvider} from "./Main1";
 import LoginClassic from "./LoginClassic";
 import Register from "./Register";
+import Ghidden from "./Ghidden";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
                             <Route path="/" element={<Main1/>}></Route>
                             <Route path="/login" element={<LoginClassic/>}></Route>
                             <Route path="/register" element={<Register/>}></Route>
+                            <Route path="/ghidden" element={<Ghidden/>}></Route>
                         </Routes>
                     </BrowserRouter>
                   </UserProvider>
