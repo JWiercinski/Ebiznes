@@ -86,15 +86,15 @@ Kod testów jednostkowych: Zadanie6/testtask4/testRun_test.go
 
 **Zadanie 7** - Testy statyczne
 
-:white_check_mark: 3.0 - dodanie lintera odpowiedniego dla kodu aplikacji serwerowej do git hooks [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/4651216e03d05f9b0ac712825f363672982ee22b)
+:white_check_mark: 3.0 - dodanie lintera odpowiedniego dla kodu aplikacji serwerowej do git hooks - [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/4651216e03d05f9b0ac712825f363672982ee22b)
 
-:white_check_mark: 3.5 - eliminacja bugów aplikacji serwerowej według sonarcloud [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/4651216e03d05f9b0ac712825f363672982ee22b) [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=JWiercinski_sonartest&metric=bugs)](https://sonarcloud.io/summary/new_code?id=JWiercinski_sonartest)
+:white_check_mark: 3.5 - eliminacja bugów aplikacji serwerowej według sonarcloud - [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/4651216e03d05f9b0ac712825f363672982ee22b) [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=JWiercinski_sonartest&metric=bugs)](https://sonarcloud.io/summary/new_code?id=JWiercinski_sonartest)
 
-:white_check_mark: 4.0 - eliminacja code smells aplikacji serwerowej według sonarcloud [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/4651216e03d05f9b0ac712825f363672982ee22b) [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=JWiercinski_sonartest&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=JWiercinski_sonartest)
+:white_check_mark: 4.0 - eliminacja code smells aplikacji serwerowej według sonarcloud - [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/4651216e03d05f9b0ac712825f363672982ee22b) [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=JWiercinski_sonartest&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=JWiercinski_sonartest)
 
-:white_check_mark: 4.5 - eliminacja podatności oraz błędów bezpieczeństwa aplikacji serwerowej według sonarcloud [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/4651216e03d05f9b0ac712825f363672982ee22b) [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=JWiercinski_sonartest&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=JWiercinski_sonartest) [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=JWiercinski_sonartest&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=JWiercinski_sonartest)
+:white_check_mark: 4.5 - eliminacja podatności oraz błędów bezpieczeństwa aplikacji serwerowej według sonarcloud - [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/4651216e03d05f9b0ac712825f363672982ee22b) [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=JWiercinski_sonartest&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=JWiercinski_sonartest) [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=JWiercinski_sonartest&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=JWiercinski_sonartest)
 
-:white_check_mark: eliminacja błędów oraz code smells aplikacji klienckiej według sonarcloud [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/7756b8512bdad7bc9cb7b6c5962e475043293e01) [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=JWiercinski_sonartest2&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=JWiercinski_sonartest2) [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=JWiercinski_sonartest2&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=JWiercinski_sonartest2) [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=JWiercinski_sonartest2&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=JWiercinski_sonartest2) [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=JWiercinski_sonartest2&metric=bugs)](https://sonarcloud.io/summary/new_code?id=JWiercinski_sonartest2)
+:white_check_mark: eliminacja błędów oraz code smells aplikacji klienckiej według sonarcloud - [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/7756b8512bdad7bc9cb7b6c5962e475043293e01) [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=JWiercinski_sonartest2&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=JWiercinski_sonartest2) [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=JWiercinski_sonartest2&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=JWiercinski_sonartest2) [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=JWiercinski_sonartest2&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=JWiercinski_sonartest2) [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=JWiercinski_sonartest2&metric=bugs)](https://sonarcloud.io/summary/new_code?id=JWiercinski_sonartest2)
 
 Kod: Zadanie7
 
@@ -104,12 +104,14 @@ Testowane repozytorium klienckie: [LINK DO REPOZYTORIUM](https://github.com/JWie
 
 **Zadanie 8** - Rejestracja i logowanie
 
-:white_check_mark: 3.0 - klasyczne logowanie po stronie serwera [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/95ae941c49ed784704a1bb1a19820f619919e42f)
+:white_check_mark: 3.0 - klasyczne logowanie po stronie serwera - [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/95ae941c49ed784704a1bb1a19820f619919e42f)
 
-:white_check_mark: 3.5 - klasyczna rejestracja po stronie serwera [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/95ae941c49ed784704a1bb1a19820f619919e42f)
+:white_check_mark: 3.5 - klasyczna rejestracja po stronie serwera - [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/95ae941c49ed784704a1bb1a19820f619919e42f)
 
-:white_check_mark: 4.0 - logowanie przez Google OAuth2
+:white_check_mark: 4.0 - logowanie przez Google OAuth2 - [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/2a6c909a61739439487c081af651ff4da145fd52)
 
-:white_check_mark: 4.5 - logowanie z wykorzystaniem innego providera OAuth2
+:white_check_mark: 4.5 - logowanie z wykorzystaniem innego providera OAuth2 - [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/2a6c909a61739439487c081af651ff4da145fd52)
 
-:white_check_mark: 5.0 - zapisywanie danych logowania OAuth2 po stronie serwera
+:white_check_mark: 5.0 - zapisywanie danych logowania OAuth2 po stronie serwera - [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/2a6c909a61739439487c081af651ff4da145fd52)
+
+Kod: Zadanie8
