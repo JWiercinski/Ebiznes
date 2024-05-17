@@ -115,3 +115,17 @@ Testowane repozytorium klienckie: [LINK DO REPOZYTORIUM](https://github.com/JWie
 :white_check_mark: 5.0 - zapisywanie danych logowania OAuth2 po stronie serwera - [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/2a6c909a61739439487c081af651ff4da145fd52)
 
 Kod: Zadanie8
+
+**Zadanie 9** - Python z Integracją LLM
+
+:white_check_mark: 3.0 - serwer łączący się z ChatGPT lub Llamą 2 do chatowania
+
+:x: 3.5 - interfejs front-endowy
+
+:x: 4.0 - lista 5 otwarć i 5 zamknięć rozmowy
+
+:x: 4.5 - ograniczenie tematów rozmowy do elementów istotnych dla sklepu
+
+:x: 5.0 - filtrowanie odpowiedzi po sentymencie
+
+Kod: Zadanie9
