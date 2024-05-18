@@ -118,13 +118,13 @@ Kod: Zadanie8
 
 **Zadanie 9** - Python z Integracją LLM
 
-:white_check_mark: 3.0 - serwer łączący się z ChatGPT lub Llamą 2 do chatowania
+:white_check_mark: 3.0 - serwer łączący się z ChatGPT lub Llamą 2 do chatowania - [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/8ad3185490c20e9d2011f572689098a78d6de20a)
 
-:x: 3.5 - interfejs front-endowy
+:white_check_mark: 3.5 - interfejs front-endowy
 
 :x: 4.0 - lista 5 otwarć i 5 zamknięć rozmowy
 
-:x: 4.5 - ograniczenie tematów rozmowy do elementów istotnych dla sklepu
+:x: 4.5 - ograniczenie tematów rozmowy do tematów istotnych dla sklepu
 
 :x: 5.0 - filtrowanie odpowiedzi po sentymencie
 

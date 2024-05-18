@@ -1,4 +1,5 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render
+from django.http import JsonResponse
 from django.views import View
 import json
 import ollama
@@ -25,7 +26,7 @@ class chatView(View):
         thread = Thread(target=generate(message))
         thread.start()
         thread.join()
-        return HttpResponse(result)
+        return JsonResponse({"response": result})
 
 
 def checkmodel():
