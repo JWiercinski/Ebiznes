@@ -126,6 +126,6 @@ Kod: Zadanie8
 
 :white_check_mark: 4.5 - ograniczenie tematów rozmowy do tematów istotnych dla sklepu - [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/f9f4253d7384b5e5fc08b53b88eda20f1ae7d3e8)
 
-:white_check_mark: 5.0 - filtrowanie odpowiedzi po sentymencie
+:white_check_mark: 5.0 - filtrowanie odpowiedzi po sentymencie - [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/9d22284dc44663fbbd11bfdccabe010822ec043d)
 
 Kod: Zadanie9
