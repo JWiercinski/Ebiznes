@@ -122,9 +122,9 @@ Kod: Zadanie8
 
 :white_check_mark: 3.5 - interfejs front-endowy - [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/6675e24d1a5b9a1f2fa25fc4ae481dc99d833524)
 
-:white_check_mark: 4.0 - lista 5 otwarć i 5 zamknięć rozmowy
+:white_check_mark: 4.0 - lista 5 otwarć i 5 zamknięć rozmowy - [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/88b72784e2a9ffaed072859dfa6345f3da22a71e)
 
-:x: 4.5 - ograniczenie tematów rozmowy do tematów istotnych dla sklepu
+:white_check_mark: 4.5 - ograniczenie tematów rozmowy do tematów istotnych dla sklepu
 
 :x: 5.0 - filtrowanie odpowiedzi po sentymencie
 

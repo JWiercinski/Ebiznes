@@ -6,5 +6,5 @@ urlpatterns = [
     path("start/", views.chatstart, name="Starter"),
     path("end/", views.chatend, name="Ender")
 ]
-#Jako że Llama 2 Uncensored odpowiada w języku angielskim, interfejs w niniejszym zadaniu zostanie zrealizowany w języku angielskim
+#As this local Llama2 instance answers in English, the whole interface will be in English as well
 #curl -X POST -H "Content-Type: application/json" -d '{"message": "Who won the football world cup in 2002?"}' http://localhost:8000/chat/
