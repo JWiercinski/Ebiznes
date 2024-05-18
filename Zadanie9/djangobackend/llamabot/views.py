@@ -9,6 +9,8 @@ from django.views.decorators.csrf import csrf_exempt
 from django.utils.decorators import method_decorator
 import random
 import logging
+import profanity_check as pc
+#alt_profanity_check
 # Create your views here.
 @method_decorator(csrf_exempt, name='dispatch')
 class chatView(View):
@@ -20,7 +22,7 @@ class chatView(View):
         message = data.get("message")
         def generate(prompt1):
             nonlocal result
-            prompt0="Say whether the following phrase concerns video game shop's information and details, game platforms, available games or matters unrelated to video game shop using just one of the following words as the answer: details, platforms, games, other. Phrase: " + prompt1
+            prompt0="Say whether the following phrase concerns video game shop's details, game platforms, available games or matters unrelated to video game shop. Respond using just one of the following words: details, platforms, games, other. Phrase: " + prompt1
             result0=ollama.generate(model="llama2-uncensored", prompt=prompt0)
             logging.warning(result0["response"])
             #options -> details, available platforms, available stock, other
@@ -42,9 +44,12 @@ class chatView(View):
                 prompt="Answer the following phrase speaking directly to the user, taking into account important aspects of the following context: name - The VidGame Shop, online shop at http://localhost:8000/, established 2001, selling both new and old games. Phrase to answer: " + prompt1
                 result1=ollama.generate(model="llama2-uncensored", prompt=prompt)
             else:
-                result1=ollama.generate(model="llama2-uncensored", prompt="Say that you are sorry, but you do not feel like you'll be able to answer this specific question at the moment. Say you may have misundrestood the question if it was related to the shop, and ask the user to rephrase if it was the case. Be polite")
+                result1=ollama.generate(model="llama2-uncensored", prompt="Say that you are sorry, but you do not feel like you'll be able to answer this specific question at the moment and you may have misundrestood the question. Be polite")
             #result1 = ollama.chat(model="llama2-uncensored", messages=[{"role": "user", "content": prompt1}])
             result=result1["response"]
+            isOK=pc.predict([result])
+            if isOK[0]!=0:
+                result="Due to unforeseen circumstances, I was unable to provide a meaningful and polite answer. I sincerely apologise."
             #result = ollama.generate(model="llama2-uncensored", prompt= prompt1)
             #result["response"]
         result = {}

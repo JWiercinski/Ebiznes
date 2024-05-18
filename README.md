@@ -124,8 +124,8 @@ Kod: Zadanie8
 
 :white_check_mark: 4.0 - lista 5 otwarć i 5 zamknięć rozmowy - [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/88b72784e2a9ffaed072859dfa6345f3da22a71e)
 
-:white_check_mark: 4.5 - ograniczenie tematów rozmowy do tematów istotnych dla sklepu
+:white_check_mark: 4.5 - ograniczenie tematów rozmowy do tematów istotnych dla sklepu - [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/f9f4253d7384b5e5fc08b53b88eda20f1ae7d3e8)
 
-:x: 5.0 - filtrowanie odpowiedzi po sentymencie
+:white_check_mark: 5.0 - filtrowanie odpowiedzi po sentymencie
 
 Kod: Zadanie9
