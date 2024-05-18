@@ -120,9 +120,9 @@ Kod: Zadanie8
 
 :white_check_mark: 3.0 - serwer łączący się z ChatGPT lub Llamą 2 do chatowania - [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/8ad3185490c20e9d2011f572689098a78d6de20a)
 
-:white_check_mark: 3.5 - interfejs front-endowy
+:white_check_mark: 3.5 - interfejs front-endowy - [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/6675e24d1a5b9a1f2fa25fc4ae481dc99d833524)
 
-:x: 4.0 - lista 5 otwarć i 5 zamknięć rozmowy
+:white_check_mark: 4.0 - lista 5 otwarć i 5 zamknięć rozmowy
 
 :x: 4.5 - ograniczenie tematów rozmowy do tematów istotnych dla sklepu
 

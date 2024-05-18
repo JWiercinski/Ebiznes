@@ -2,6 +2,7 @@ import './App.css';
 import React from 'react';
 import axios from "axios";
 export const MessageContext = React.createContext()
+export const StartedContext = React.createContext()
 export const MessageProvider = ({ children }) => {
     const [messages, setMessages] = React.useState(() => {
         const storedMessages = JSON.parse(localStorage.getItem("messages")) || [];
@@ -22,10 +23,28 @@ export const MessageProvider = ({ children }) => {
         </MessageContext.Provider>
     );
 };
+export const StartedProvider = ({children}) =>
+{
+    const getInitialState = () => {
+        const savedState = localStorage.getItem('started');
+        return savedState !== null ? JSON.parse(savedState) : false;
+    };
+    const [started, setStarted] = React.useState(getInitialState)
+
+    React.useEffect(() => {
+        localStorage.setItem('started', JSON.stringify(started));
+    }, [started]);
+
+    return (
+        <StartedContext.Provider value={{ started, setStarted }}>
+            {children}
+        </StartedContext.Provider>
+    );
+}
 const ChatComponent = () => {
     const { messages, addMessage } = React.useContext(MessageContext);
     const [message, setMessage] = React.useState("");
-    const [info, setInfo] = React.useState(" ")
+    const {started, setStarted} = React.useContext(StartedContext)
 
     const pushMessage = async (event) =>
     {
@@ -47,6 +66,36 @@ const ChatComponent = () => {
         }
     };
 
+    const startChat = async (event) =>
+    {
+        try
+        {
+            const response = await axios.get("http://localhost:8000/start/")
+            addMessage({user: "LLAMA", content: response.data.response})
+            setStarted(true)
+        }
+        catch (e)
+        {
+            addMessage({user: "SYSTEM", content: e.message})
+            window.location.reload()
+        }
+    }
+
+    const endChat = async (event) =>
+    {
+        try
+        {
+            const response = await axios.get("http://localhost:8000/end/")
+            addMessage({user: "LLAMA", content: response.data.response})
+            setStarted(false)
+        }
+        catch (e)
+        {
+            addMessage({user: "SYSTEM", content: e.message})
+            window.location.reload()
+        }
+    }
+
     const clearChat = () =>
     {
         localStorage.removeItem("messages");
@@ -59,12 +108,16 @@ const ChatComponent = () => {
                 <input
                     type="text"
                     value={message}
+                    disabled={!started}
                     onChange={(e) => setMessage(e.target.value)}
                     placeholder="Message to the bot"
                     required
                 />
-                <button type="submit">Continue</button>
+                <button type="submit" disabled={!started}>Continue</button>
             </form>
+            <p></p>
+            <button onClick={startChat} disabled={started}>Start Chat</button>
+            <button onClick={endChat} disabled={!started}>End Chat</button>
             <p></p>
             <button onClick={clearChat}>Clear Chat</button>
             <p></p>
@@ -79,11 +132,13 @@ const ChatComponent = () => {
 function App() {
     return (
         <MessageProvider>
-        <div className="Chat with our llama">
-        <h1>Welcome to our our LlamaBot</h1>
-        <ChatComponent/>
-      </div>
-    </MessageProvider>
+            <StartedProvider>
+                <div className="Chat with our llama">
+                    <h1>Welcome to our our LlamaBot</h1>
+                    <ChatComponent/>
+                </div>
+            </StartedProvider>
+        </MessageProvider>
   );
 }
 
