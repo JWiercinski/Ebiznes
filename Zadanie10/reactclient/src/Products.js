@@ -25,7 +25,7 @@ const Products = () => {
     React.useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get('http://localhost:22222/products');
+                const response = await axios.get('https://jwgoserver.azurewebsites.net/products');
                 setProducts(response.data);
             } catch (error) {
                 console.error('Error fetching data: ', error);
