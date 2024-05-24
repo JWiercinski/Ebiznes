@@ -23,3 +23,18 @@ jobs:
 
     - name: Build
       run: go build -v ./...
+
+    - name: Send mail
+      if: ${{ success() }}
+      uses: dawidd6/action-send-mail@v2
+      with:
+          server_address: smtp.office365.com
+          server_port: 587
+          username: ${{ secrets.MAIL_USERNAME }}
+          password: ${{ secrets.MAIL_PASSWORD }}
+          subject: Status budowy aplikacji Go
+          to: ${{ secrets.MAIL_USERNAME }}
+          from: ${{ secrets.MAIL_USERNAME }}
+          body: Build zakończony powodzeniem!
+
+

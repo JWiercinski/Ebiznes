@@ -134,9 +134,9 @@ Kod: Zadanie9
 
 :white_check_mark: 3.0 - stworzenie chmurowej instancji serwera z użyciem obrazu Dockera - [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/5051ccb58b095152eaa3dff3ba8364cf96b69a46)
 
-:white_check_mark: 3.5 - stworzenie pipeline'a w GitHub Actions do budowania aplikacji serwerowej
+:white_check_mark: 3.5 - stworzenie pipeline'a w GitHub Actions do budowania aplikacji serwerowej - [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/98ee474add8782140599e216ee8dd685a269ff4c)
 
-:x: 4.0 - dodanie notyfikacji mailowej o zbudowaniu aplikacji serwerowej w GitHub Actions
+:white_check_mark: 4.0 - dodanie notyfikacji mailowej o zbudowaniu aplikacji serwerowej w GitHub Actions
 
 :x: 4.5 - dodanie deploymentu aplikacji serwerowej oraz klienckiej w GitHub Actions
 
