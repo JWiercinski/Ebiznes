@@ -129,3 +129,21 @@ Kod: Zadanie8
 :white_check_mark: 5.0 - filtrowanie odpowiedzi po sentymencie - [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/9d22284dc44663fbbd11bfdccabe010822ec043d)
 
 Kod: Zadanie9
+
+**Zadanie 10** - Deployment na chmurze
+
+:white_check_mark: 3.0 - stworzenie chmurowej instancji serwera z użyciem obrazu Dockera
+
+:x: 3.5 - stworzenie pipeline'a w GitHub Actions do budowania aplikacji
+
+:x: 4.0 - dodanie notyfikacji mailowej o zbudowaniu aplikacji w GitHub Actions
+
+:x: 4.5 - dodanie deploymentu aplikacji serwerowej oraz klienckiej w GitHub Actions
+
+:x: 5.0 - dodanie testów funkcjonalnych w GitHub Actions
+
+Kod: Zadanie10
+
+[Link do obrazu dockera aplikacji serwerowej](https://hub.docker.com/repository/docker/jwiercinski/goazure/general)
+
+[Link do aplikacji serwerowej zbudowanej za pomocą obrazu Dockera](jwgoserver.azurewebsites.net)
