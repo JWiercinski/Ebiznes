@@ -136,9 +136,9 @@ Kod: Zadanie9
 
 :white_check_mark: 3.5 - stworzenie pipeline'a w GitHub Actions do budowania aplikacji serwerowej - [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/98ee474add8782140599e216ee8dd685a269ff4c)
 
-:white_check_mark: 4.0 - dodanie notyfikacji mailowej o zbudowaniu aplikacji serwerowej w GitHub Actions
+:white_check_mark: 4.0 - dodanie notyfikacji mailowej o zbudowaniu aplikacji serwerowej w GitHub Actions - [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/21d4adee46f1d9a083f171d3407b447e95a33081)
 
-:x: 4.5 - dodanie deploymentu aplikacji serwerowej oraz klienckiej w GitHub Actions
+:white_check_mark: 4.5 - dodanie deploymentu aplikacji serwerowej oraz klienckiej w GitHub Actions
 
 :x: 5.0 - dodanie testów funkcjonalnych w GitHub Actions
 
@@ -149,3 +149,5 @@ Kod: Zadanie10
 [Link do aplikacji serwerowej zbudowanej za pomocą obrazu Dockera](jwgoserver.azurewebsites.net)
 
 [Link do repozytorium serwerowego z GitHub Actions](https://github.com/JWiercinski/gocloud)
+
+[Link do repozytorium klienckiego z GitHub Actions](https://github.com/JWiercinski/reactcloud)
