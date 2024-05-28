@@ -140,7 +140,7 @@ Kod: Zadanie9
 
 :white_check_mark: 4.5 - dodanie deploymentu aplikacji serwerowej oraz klienckiej w GitHub Actions - [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/54291389ef22e6d207c7632b456cd6a507538581)
 
-:white_check_mark: 5.0 - dodanie testów funkcjonalnych w GitHub Actions
+:white_check_mark: 5.0 - dodanie testów funkcjonalnych w GitHub Actions - [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/525da785ca029250f2cef910e909c9a61139f14f)
 
 Kod: Zadanie10, [Link do repozytorium serwerowego z GitHub Actions](https://github.com/JWiercinski/gocloud), [Link do repozytorium klienckiego z GitHub Actions](https://github.com/JWiercinski/reactcloud)
 
