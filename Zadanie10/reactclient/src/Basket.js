@@ -34,7 +34,7 @@ function Basket () {
         <div>
             <Link to="/"><button>Strona główna</button></Link>
             <Link to="/products"><button>Kontynuuj zakupy</button></Link>
-            <h1>Your Basket:</h1>
+            <h1>Twój koszyk:</h1>
             {basket.map((item, index) => (
                 <div key={index}>
                     <h2>{item.product.NAME}</h2>

@@ -138,16 +138,18 @@ Kod: Zadanie9
 
 :white_check_mark: 4.0 - dodanie notyfikacji mailowej o zbudowaniu aplikacji serwerowej w GitHub Actions - [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/21d4adee46f1d9a083f171d3407b447e95a33081)
 
-:white_check_mark: 4.5 - dodanie deploymentu aplikacji serwerowej oraz klienckiej w GitHub Actions
+:white_check_mark: 4.5 - dodanie deploymentu aplikacji serwerowej oraz klienckiej w GitHub Actions - [LINK DO COMMITA](https://github.com/JWiercinski/Ebiznes/commit/54291389ef22e6d207c7632b456cd6a507538581)
 
-:x: 5.0 - dodanie testów funkcjonalnych w GitHub Actions
+:white_check_mark: 5.0 - dodanie testów funkcjonalnych w GitHub Actions
 
-Kod: Zadanie10
+Kod: Zadanie10, [Link do repozytorium serwerowego z GitHub Actions](https://github.com/JWiercinski/gocloud), [Link do repozytorium klienckiego z GitHub Actions](https://github.com/JWiercinski/reactcloud)
 
 [Link do obrazu dockera aplikacji serwerowej](https://hub.docker.com/repository/docker/jwiercinski/goazure/general)
 
-[Link do aplikacji serwerowej zbudowanej za pomocą obrazu Dockera](jwgoserver.azurewebsites.net)
+[Link do obrazu dockera aplikacji klienckiej](https://hub.docker.com/repository/docker/jwiercinski/reactazure/general)
 
-[Link do repozytorium serwerowego z GitHub Actions](https://github.com/JWiercinski/gocloud)
+Linki do aplikacji chmurowych - w związku z wykorzystaniem Free Tier, zazwyczaj wyłączone:
 
-[Link do repozytorium klienckiego z GitHub Actions](https://github.com/JWiercinski/reactcloud)
+[Link do aplikacji serwerowej zbudowanej za pomocą obrazu Dockera](https://jwgoserver.azurewebsites.net)
+
+[Link do aplikacji klienckiej zbudowanej za pomocą obrazu Dockera](https://jwclientreact.azurewebsites.net)
